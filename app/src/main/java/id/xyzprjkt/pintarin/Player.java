@@ -37,22 +37,16 @@ public class Player extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        
+        getSupportActionBar().hide();
         spiiner = findViewById(R.id.progressBar);
         fullScreenOp = findViewById(R.id.fullScreenOp);
         frameLayout = findViewById(R.id.frameLayout);
-
         Intent i = getIntent();
         Bundle data = i.getExtras();
         Video v = (Video) data.getSerializable("videoData");
-
-        getSupportActionBar().setTitle(v.getTitle());
-
         TextView title = findViewById(R.id.videoTitle);
         TextView desc = findViewById(R.id.videoDesc);
         videoPlayer = findViewById(R.id.videoView);
-
         title.setText(v.getTitle());
         desc.setText(v.getDescription());
         Uri videoUrl = Uri.parse(v.getVideoUrl());
@@ -95,7 +89,6 @@ public class Player extends AppCompatActivity {
     public void onBackPressed() {
         fullScreenOp.setVisibility(View.VISIBLE);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        getSupportActionBar().show();
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         int heightValue = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,220,getResources().getDisplayMetrics());
         frameLayout.setLayoutParams(new ConstraintLayout.LayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,heightValue)));

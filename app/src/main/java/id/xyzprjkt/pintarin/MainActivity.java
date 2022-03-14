@@ -1,13 +1,11 @@
 package id.xyzprjkt.pintarin;
 
+import android.os.Bundle;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -32,10 +30,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
         all_videos = new ArrayList<>();
-
         videoList = findViewById(R.id.videoList);
         videoList.setLayoutManager(new LinearLayoutManager(this));
         adapter = new VideoAdapter(this,all_videos);
