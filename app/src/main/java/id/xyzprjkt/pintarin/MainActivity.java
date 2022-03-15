@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getJsonData() {
-        String URL = "https://raw.githubusercontent.com/xyz-prjkt/pintar.in_db/main/data.json";
+        String URL = "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/data.json";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
             @Override
