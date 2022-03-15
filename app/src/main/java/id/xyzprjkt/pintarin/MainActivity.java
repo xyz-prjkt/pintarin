@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
                         v.setTitle(video.getString("title"));
                         v.setDescription(video.getString("description"));
-                        v.setAuthor(video.getString("subtitle"));
+                        v.setAuthor(video.getString("author"));
                         v.setImageUrl(video.getString("thumb"));
                         JSONArray videoUrl = video.getJSONArray("sources");
                         v.setVideoUrl(videoUrl.getString(0));

@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> {
@@ -37,6 +39,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.title.setText(allVideos.get(position).getTitle());
+        holder.author.setText(allVideos.get(position).getAuthor());
         Picasso.get().load(allVideos.get(position).getImageUrl()).into(holder.videoImage);
 
         holder.vv.setOnClickListener(new View.OnClickListener() {
@@ -60,12 +63,14 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView videoImage;
         TextView title;
+        TextView author;
         View vv;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             videoImage = itemView.findViewById(R.id.videoThumbnail);
             title = itemView.findViewById(R.id.videoTitle);
+            author = itemView.findViewById(R.id.videoAuthor);
             vv = itemView;
 
         }
