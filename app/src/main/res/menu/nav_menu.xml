@@ -9,12 +9,6 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:title="List"
-        android:enabled="true"
-        android:icon="@drawable/ic_baseline_list_24"
-        app:showAsAction="ifRoom"/>
-
-    <item
         android:title="Settings"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_settings_24"

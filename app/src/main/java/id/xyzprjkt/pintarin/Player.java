@@ -1,17 +1,10 @@
 package id.xyzprjkt.pintarin;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.pm.ConfigurationInfo;
 import android.content.res.Configuration;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,12 +15,16 @@ import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
+import java.util.Objects;
 
 public class Player extends AppCompatActivity {
 
-    public static final String TAG = "TAG";
     ProgressBar spiiner;
     ImageView fullScreenOp;
     FrameLayout frameLayout;
@@ -37,7 +34,7 @@ public class Player extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         spiiner = findViewById(R.id.progressBar);
         fullScreenOp = findViewById(R.id.fullScreenOp);
         frameLayout = findViewById(R.id.frameLayout);
@@ -54,24 +51,18 @@ public class Player extends AppCompatActivity {
         MediaController mc = new MediaController(this);
         videoPlayer.setMediaController(mc);
 
-        videoPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                videoPlayer.start();
-                spiiner.setVisibility(View.GONE);
-            }
+        videoPlayer.setOnPreparedListener(mp -> {
+            videoPlayer.start();
+            spiiner.setVisibility(View.GONE);
         });
         
-        fullScreenOp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-                getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                getSupportActionBar().hide();
-                fullScreenOp.setVisibility(View.GONE);
-                frameLayout.setLayoutParams(new ConstraintLayout.LayoutParams(new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)));
-                videoPlayer.setLayoutParams(new FrameLayout.LayoutParams(new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)));
-            }
+        fullScreenOp.setOnClickListener(v1 -> {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            getSupportActionBar().hide();
+            fullScreenOp.setVisibility(View.GONE);
+            frameLayout.setLayoutParams(new ConstraintLayout.LayoutParams(new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)));
+            videoPlayer.setLayoutParams(new FrameLayout.LayoutParams(new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)));
         });
 
 
@@ -88,7 +79,7 @@ public class Player extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         fullScreenOp.setVisibility(View.VISIBLE);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         int heightValue = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,220,getResources().getDisplayMetrics());
         frameLayout.setLayoutParams(new ConstraintLayout.LayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,heightValue)));

@@ -1,29 +1,29 @@
 package id.xyzprjkt.pintarin;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SplashScreen extends AppCompatActivity {
+import java.util.Objects;
 
-    private int delay=1000;
+@SuppressLint("CustomSplashScreen")
+public class SplashScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_splash);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        int delay = 1000;
+        new Handler().postDelayed(() -> {
 
-                Intent home=new Intent(SplashScreen.this, MainActivity.class);
-                startActivity(home);
-                finish();
+            Intent home=new Intent(SplashScreen.this, MainActivity.class);
+            startActivity(home);
+            finish();
 
-            }
-        },delay);
+        }, delay);
     }
 }

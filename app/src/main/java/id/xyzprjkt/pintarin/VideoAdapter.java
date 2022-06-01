@@ -1,5 +1,6 @@
 package id.xyzprjkt.pintarin;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,13 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> {
-    private List<Video> allVideos;
-    private Context context;
+    private final List<Video> allVideos;
+    private final Context context;
 
     public VideoAdapter(Context ctx, List<Video> videos){
         this.allVideos = videos;
@@ -37,21 +36,18 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.title.setText(allVideos.get(position).getTitle());
         holder.author.setText(allVideos.get(position).getAuthor());
         Picasso.get().load(allVideos.get(position).getImageUrl()).into(holder.videoImage);
 
-        holder.vv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bundle b = new Bundle();
-                b.putSerializable("videoData",allVideos.get(position));
-                Intent i = new Intent(context,Player.class);
-                i.putExtras(b);
-                v.getContext().startActivity(i);
+        holder.vv.setOnClickListener(v -> {
+            Bundle b = new Bundle();
+            b.putSerializable("videoData",allVideos.get(position));
+            Intent i = new Intent(context,Player.class);
+            i.putExtras(b);
+            v.getContext().startActivity(i);
 
-            }
         });
     }
 
@@ -60,7 +56,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> 
         return allVideos.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView videoImage;
         TextView title;
         TextView author;

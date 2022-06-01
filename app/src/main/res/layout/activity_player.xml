@@ -33,21 +33,21 @@
 
         <ImageView
             android:id="@+id/fullScreenOp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_gravity="end"
             android:padding="5dp"
             app:tint="@android:color/white"
-            app:srcCompat="@drawable/ic_baseline_fullscreen_24" />
+            app:srcCompat="@drawable/ic_baseline_fullscreen_24"
+            android:contentDescription="TODO"
+            tools:ignore="ContentDescription,HardcodedText" />
     </FrameLayout>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        style="?attr/materialCardViewFilledStyle"
         android:layout_margin="16dp"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout">
 
@@ -60,20 +60,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:textSize="24sp"/>
+                android:textSize="24sp"
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/videoDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:justificationMode="inter_word"
                 app:layout_constraintTop_toBottomOf="@id/videoTitle" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

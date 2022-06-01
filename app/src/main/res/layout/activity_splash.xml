@@ -7,13 +7,14 @@
     android:background="@drawable/splash_bg">
 
     <ImageView
-        android:layout_width="250dp"
-        android:layout_height="150dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:src="@drawable/pintarin_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>
