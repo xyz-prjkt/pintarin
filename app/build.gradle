@@ -49,4 +49,7 @@ dependencies {
     implementation 'joda-time:joda-time:2.10.13'
     implementation platform('com.google.firebase:firebase-bom:30.2.0')
     implementation 'com.google.firebase:firebase-analytics'
+    implementation "com.airbnb.android:lottie:5.2.0"
+    implementation "com.hanks:htextview-base:0.1.6"
+    implementation "com.hanks:htextview-fade:0.1.6"
 }

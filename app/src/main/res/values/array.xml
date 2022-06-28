@@ -1,0 +1,9 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string-array name="welcome">
+        <item>Welcome</item>
+        <item>Bonjour</item>
+        <item>Hai</item>
+    </string-array>
+
+</resources>

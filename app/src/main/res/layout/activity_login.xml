@@ -1,101 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_vertical"
-    android:padding="24dp">
+    android:gravity="center_vertical">
 
-    <LinearLayout
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginBottom="24dp">
+        app:lottie_rawRes="@raw/loginpanel"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppinsblack"
-            android:text="Login"
-            android:textSize="45sp" />
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-8dp"
-        android:text="Sign in with myXD account to find latest course materials"
-        android:fontFamily="@font/poppinsmedium"
-        android:textSize="16sp"/>
-    </LinearLayout>
+            <TextView
+                android:id="@+id/welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsblack"
+                android:text="Bonjour"
+                android:textSize="45sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-8dp"
+                android:text="Sign in with myXD account to find latest course materials"
+                android:fontFamily="@font/poppinsmedium"
+                android:textSize="16sp"/>
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/Email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/textinput_top"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:padding="18dp"
-        android:textSize="14sp"
-        android:fontFamily="@font/poppinsmedium"/>
+        <LinearLayout
+            android:id="@+id/panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/header"
+            android:layout_alignStart="@id/header">
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/textinput_bot"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="18dp"
-        android:textSize="14sp"
-        android:fontFamily="@font/poppinsmedium" />
+            <EditText
+                android:id="@+id/Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textinput_top"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="18dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppinsmedium"/>
 
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/login_button"
-        android:layout_marginTop="16dp"
-        android:text="Sign in"
-        android:textSize="13sp"
-        android:textColor="@android:color/system_accent1_10"
-        android:elevation="0dp"
-        android:fontFamily="@font/poppinsblack"/>
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/textinput_bot"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="18dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppinsmedium" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_button"
+                android:layout_marginTop="16dp"
+                android:text="Sign in"
+                android:textSize="13sp"
+                android:textColor="@android:color/system_accent1_10"
+                android:elevation="0dp"
+                android:fontFamily="@font/poppinsblack"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="24dp">
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/createText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Here ?  Create Account"
-        android:fontFamily="@font/poppinsmedium"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp"
+            android:layout_below="@id/panel"
+            android:layout_alignStart="@id/panel">
 
-    <TextView
-        android:id="@+id/forgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forgot Password ?"
-        android:fontFamily="@font/poppinsmedium" />
+            <TextView
+                android:id="@+id/createText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Here ?  Create Account"
+                android:fontFamily="@font/poppinsmedium"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/forgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forgot Password ?"
+                android:fontFamily="@font/poppinsmedium" />
 
-</LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</merge>
