@@ -1,4 +1,4 @@
-package id.xyzprjkt.pintarin;
+package id.xyzprjkt.pintarin.Activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -21,7 +21,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
+import id.xyzprjkt.pintarin.R;
+import id.xyzprjkt.pintarin.Adapter.Video;
+import id.xyzprjkt.pintarin.Adapter.VideoAdapter;
+
+public class CourseActivity extends AppCompatActivity {
     public static final String TAG = "TAG";
     RecyclerView videoList;
     VideoAdapter adapter;
@@ -38,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         adapter = new VideoAdapter(this,all_videos);
         videoList.setAdapter(adapter);
         getJsonData();
-
     }
 
     private void getJsonData() {

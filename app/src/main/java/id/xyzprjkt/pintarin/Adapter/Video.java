@@ -1,4 +1,4 @@
-package id.xyzprjkt.pintarin;
+package id.xyzprjkt.pintarin.Adapter;
 
 import java.io.Serializable;
 

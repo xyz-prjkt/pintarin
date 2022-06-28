@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">pintar.in</string>
+    <string name="app_name">pintarin</string>
+    <string name="user_name_welcome">Welcome</string>
 </resources>

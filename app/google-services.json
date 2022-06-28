@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "771738376966",
+    "project_id": "pintarin-labit2022",
+    "storage_bucket": "pintarin-labit2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771738376966:android:07f9a89770c6b19e9a1c87",
+        "android_client_info": {
+          "package_name": "id.xyzprjkt.pintarin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "771738376966-ptnscdr3lduvko66bbmr55k6osuf9jbo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5VS8DN8iKVqQUeLTo4GRcjMylpwqUwQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "771738376966-ptnscdr3lduvko66bbmr55k6osuf9jbo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package id.xyzprjkt.pintarin;
+package id.xyzprjkt.pintarin.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import id.xyzprjkt.pintarin.R;
 
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> {
     private final List<Video> allVideos;

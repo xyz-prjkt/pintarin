@@ -1,4 +1,4 @@
-package id.xyzprjkt.pintarin;
+package id.xyzprjkt.pintarin.Adapter;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -22,6 +22,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.Objects;
+
+import id.xyzprjkt.pintarin.R;
 
 public class Player extends AppCompatActivity {
 
