@@ -1,4 +1,4 @@
-package id.xyzprjkt.pintarin.Adapter;
+package id.xyzprjkt.pintarin.VideoController.Sponsored;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -24,8 +24,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import java.util.Objects;
 
 import id.xyzprjkt.pintarin.R;
+import id.xyzprjkt.pintarin.VideoController.Programming.ProgrammingVideo;
 
-public class Player extends AppCompatActivity {
+public class SponsoredPlayer extends AppCompatActivity {
 
     ProgressBar spiiner;
     ImageView fullScreenOp;
@@ -42,7 +43,7 @@ public class Player extends AppCompatActivity {
         frameLayout = findViewById(R.id.frameLayout);
         Intent i = getIntent();
         Bundle data = i.getExtras();
-        Video v = (Video) data.getSerializable("videoData");
+        SponsoredVideo v = (SponsoredVideo) data.getSerializable("videoData");
         TextView title = findViewById(R.id.videoTitle);
         TextView desc = findViewById(R.id.videoDesc);
         videoPlayer = findViewById(R.id.videoView);
@@ -66,8 +67,6 @@ public class Player extends AppCompatActivity {
             frameLayout.setLayoutParams(new ConstraintLayout.LayoutParams(new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)));
             videoPlayer.setLayoutParams(new FrameLayout.LayoutParams(new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)));
         });
-
-
     }
 
     @Override

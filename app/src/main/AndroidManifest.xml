@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="id.xyzprjkt.pintarin.Adapter.SplashScreen"
+        <activity android:name="id.xyzprjkt.pintarin.VideoController.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,12 @@
         <activity android:name=".Activity.ProfileActivity" />
 
         <activity
-            android:name="id.xyzprjkt.pintarin.Adapter.Player"
+            android:name="id.xyzprjkt.pintarin.VideoController.Programming.ProgramingPlayer"
+            android:screenOrientation="fullSensor"
+            android:configChanges="orientation|screenSize" />
+
+        <activity
+            android:name="id.xyzprjkt.pintarin.VideoController.Sponsored.SponsoredPlayer"
             android:screenOrientation="fullSensor"
             android:configChanges="orientation|screenSize" />
 

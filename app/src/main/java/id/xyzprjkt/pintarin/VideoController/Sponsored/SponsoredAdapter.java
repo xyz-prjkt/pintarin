@@ -1,4 +1,4 @@
-package id.xyzprjkt.pintarin.Adapter;
+package id.xyzprjkt.pintarin.VideoController.Sponsored;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,17 +18,16 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import id.xyzprjkt.pintarin.R;
+import id.xyzprjkt.pintarin.VideoController.Programming.ProgramingPlayer;
 
-public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> {
-    private final List<Video> allVideos;
+public class SponsoredAdapter extends RecyclerView.Adapter<SponsoredAdapter.ViewHolder> {
+    private final List<SponsoredVideo> allSponsoredVideos;
     private final Context context;
 
-    public VideoAdapter(Context ctx, List<Video> videos){
-        this.allVideos = videos;
+    public SponsoredAdapter(Context ctx, List<SponsoredVideo> sponsoredVideos){
+        this.allSponsoredVideos = sponsoredVideos;
         this.context = ctx;
     }
-
-
 
     @NonNull
     @Override
@@ -39,14 +38,14 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
-        holder.title.setText(allVideos.get(position).getTitle());
-        holder.author.setText(allVideos.get(position).getAuthor());
-        Picasso.get().load(allVideos.get(position).getImageUrl()).into(holder.videoImage);
+        holder.title.setText(allSponsoredVideos.get(position).getTitle());
+        holder.author.setText(allSponsoredVideos.get(position).getAuthor());
+        Picasso.get().load(allSponsoredVideos.get(position).getImageUrl()).into(holder.videoImage);
 
         holder.vv.setOnClickListener(v -> {
             Bundle b = new Bundle();
-            b.putSerializable("videoData",allVideos.get(position));
-            Intent i = new Intent(context,Player.class);
+            b.putSerializable("videoData", allSponsoredVideos.get(position));
+            Intent i = new Intent(context, SponsoredPlayer.class);
             i.putExtras(b);
             v.getContext().startActivity(i);
 
@@ -55,7 +54,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return allVideos.size();
+        return allSponsoredVideos.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

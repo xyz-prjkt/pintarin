@@ -36,11 +36,11 @@ public class RegisterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mFullName   = findViewById(R.id.fullName);
-        mEmail      = findViewById(R.id.Email);
-        mPassword   = findViewById(R.id.password);
-        mRegisterBtn= findViewById(R.id.registerBtn);
-        mLoginBtn   = findViewById(R.id.createText);
+        mFullName = findViewById(R.id.fullName);
+        mEmail = findViewById(R.id.Email);
+        mPassword = findViewById(R.id.password);
+        mRegisterBtn = findViewById(R.id.registerBtn);
+        mLoginBtn = findViewById(R.id.createText);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -50,47 +50,40 @@ public class RegisterActivity extends Activity {
             String password = mPassword.getText().toString().trim();
             final String fullName = mFullName.getText().toString();
 
-            if(TextUtils.isEmpty(email)){
+            if (TextUtils.isEmpty(email)) {
                 mEmail.setError("Email is Required.");
                 return;
             }
 
-            if(TextUtils.isEmpty(password)){
+            if (TextUtils.isEmpty(password)) {
                 mPassword.setError("Password is Required.");
                 return;
             }
 
-            if(password.length() < 6){
+            if (password.length() < 6) {
                 mPassword.setError("Password Must be >= 6 Characters");
                 return;
             }
 
-            // register the user in firebase
-
-            fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
-                if(task.isSuccessful()){
+            fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
 
                     Toast.makeText(RegisterActivity.this, "User Created.", Toast.LENGTH_SHORT).show();
                     userID = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
                     DocumentReference documentReference = fStore.collection("users").document(userID);
-                    Map<String,Object> user = new HashMap<>();
-                    user.put("fName",fullName);
-                    user.put("email",email);
-                    documentReference.set(user).addOnSuccessListener(aVoid -> Log.d(TAG, "onSuccess: user Profile is created for "+ userID)).addOnFailureListener(e -> Log.d(TAG, "onFailure: " + e));
-                    startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
+                    Map<String, Object> user = new HashMap<>();
+                    user.put("fName", fullName);
+                    user.put("email", email);
+                    documentReference.set(user).addOnSuccessListener(aVoid -> Log.d(TAG, "onSuccess: user Profile is created for " + userID)).addOnFailureListener(e -> Log.d(TAG, "onFailure: " + e));
+                    startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
 
-                }else {
+                } else {
                     Toast.makeText(RegisterActivity.this, "Error ! " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         });
-
-
-
-        mLoginBtn.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),LoginActivity.class)));
-
+        mLoginBtn.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), LoginActivity.class)));
     }
-
     @Override
     public void onBackPressed() {
         this.finishAffinity();

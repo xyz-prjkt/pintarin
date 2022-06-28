@@ -9,7 +9,8 @@
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
         app:lottie_rawRes="@raw/loginpanel"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"/>
@@ -107,13 +108,6 @@
                 android:text="New Here ?  Create Account"
                 android:fontFamily="@font/poppinsmedium"
                 app:layout_constraintEnd_toEndOf="parent"/>
-
-            <TextView
-                android:id="@+id/forgotPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Forgot Password ?"
-                android:fontFamily="@font/poppinsmedium" />
 
         </LinearLayout>
     </RelativeLayout>

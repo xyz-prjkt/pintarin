@@ -1,9 +1,15 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string-array name="welcome">
-        <item>Welcome</item>
+        <item>Hello</item>
         <item>Bonjour</item>
         <item>Hai</item>
+        <item>أهلا</item>
+        <item>Ken kabare</item>
+        <item>こんにちは</item>
+        <item>안녕하세요</item>
+        <item>你好</item>
+        <item>नमस्ते</item>
     </string-array>
 
 </resources>

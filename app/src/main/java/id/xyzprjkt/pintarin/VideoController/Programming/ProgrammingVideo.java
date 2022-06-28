@@ -1,8 +1,8 @@
-package id.xyzprjkt.pintarin.Adapter;
+package id.xyzprjkt.pintarin.VideoController.Programming;
 
 import java.io.Serializable;
 
-public class Video implements Serializable {
+public class ProgrammingVideo implements Serializable {
     private String title;
     private String description;
     private String author;

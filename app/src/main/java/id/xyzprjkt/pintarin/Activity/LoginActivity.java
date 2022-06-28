@@ -10,8 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
-
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
@@ -22,7 +20,7 @@ import id.xyzprjkt.pintarin.R;
 public class LoginActivity extends Activity {
     EditText mEmail,mPassword;
     Button mLoginBtn;
-    TextView welcome, mCreateBtn,forgotTextLink;
+    TextView welcome, mCreateBtn;
     FirebaseAuth fAuth;
 
     @Override
@@ -36,7 +34,6 @@ public class LoginActivity extends Activity {
         fAuth = FirebaseAuth.getInstance();
         mLoginBtn = findViewById(R.id.loginBtn);
         mCreateBtn = findViewById(R.id.createText);
-        forgotTextLink = findViewById(R.id.forgotPassword);
 
         Random genmsg = new Random();
         final Handler handler = new Handler();
@@ -44,9 +41,9 @@ public class LoginActivity extends Activity {
             @Override
             public void run() {
                 String[] msg = getResources().getStringArray(R.array.welcome);
-                int  n = genmsg.nextInt(msg.length-1);
+                int n = genmsg.nextInt(msg.length-1);
                 welcome.setText(msg[n]);
-                handler.postDelayed(this, 2000);
+                handler.postDelayed(this, 5000);
             }
         };
         handler.post(runnable);
@@ -71,8 +68,6 @@ public class LoginActivity extends Activity {
                 return;
             }
 
-            // authenticate the user
-
             fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
                 if(task.isSuccessful()){
                     Toast.makeText(LoginActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
@@ -84,38 +79,12 @@ public class LoginActivity extends Activity {
             });
 
         });
-
         mCreateBtn.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),RegisterActivity.class)));
-
-        forgotTextLink.setOnClickListener(v -> {
-
-            final EditText resetMail = new EditText(v.getContext());
-            final AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
-            passwordResetDialog.setTitle("Reset Password ?");
-            passwordResetDialog.setMessage("Enter Your Email To Received Reset Link.");
-            passwordResetDialog.setView(resetMail);
-
-            passwordResetDialog.setPositiveButton("Yes", (dialog, which) -> {
-                // extract the email and send reset link
-                String mail = resetMail.getText().toString();
-                fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(aVoid -> Toast.makeText(LoginActivity.this, "Reset Link Sent To Your Email.", Toast.LENGTH_SHORT).show()).addOnFailureListener(e -> Toast.makeText(LoginActivity.this, "Error ! Reset Link is Not Sent" + e.getMessage(), Toast.LENGTH_SHORT).show());
-
-            });
-
-            passwordResetDialog.setNegativeButton("No", (dialog, which) -> {
-                // close the dialog
-            });
-
-            passwordResetDialog.create().show();
-
-        });
     }
 
     @Override
     public void onBackPressed() {
         this.finishAffinity();
     }
-
-
 
 }

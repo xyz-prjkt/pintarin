@@ -1,4 +1,4 @@
-package id.xyzprjkt.pintarin.Adapter;
+package id.xyzprjkt.pintarin.VideoController;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
