@@ -3,6 +3,8 @@ package id.xyzprjkt.pintarin.Activity;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -14,6 +16,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.faltenreich.skeletonlayout.Skeleton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,7 +24,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import id.xyzprjkt.pintarin.R;
 import id.xyzprjkt.pintarin.VideoController.Programming.ProgrammingAdapter;
@@ -41,10 +43,15 @@ public class CourseActivity extends Activity {
     List<ProgrammingVideo> videoPrograming;
     List<SponsoredVideo> videoSponsored;
 
+    private Skeleton loading;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
+
+        loading = findViewById(R.id.skeletonLayout);
+        loading.showSkeleton();
 
         // Stored Video
         videoPrograming = new ArrayList<>();
@@ -114,6 +121,8 @@ public class CourseActivity extends Activity {
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
+            } finally {
+                new Handler(Looper.getMainLooper()).postDelayed(() -> loading.showOriginal(), 2000);
             }
         }, error -> Log.d(TAG, "onErrorResponse: " + error.getMessage()));
         requestQueue.add(objectRequest);

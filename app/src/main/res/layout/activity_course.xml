@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/pintarinRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -11,15 +11,16 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
             android:orientation="vertical">
             <LinearLayout
                 android:id="@+id/pintarinHeader"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
                 <RelativeLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
                     <TextView
@@ -43,9 +44,20 @@
                 </RelativeLayout>
             </LinearLayout>
 
-            <!-- Course Content -->
-            <include layout="@layout/content_programing" />
-            <include layout="@layout/content_sponsored" />
+            <com.faltenreich.skeletonlayout.SkeletonLayout
+                android:id="@+id/skeletonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:maskCornerRadius="24dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- Course Content -->
+                    <include layout="@layout/content_programing" />
+                    <include layout="@layout/content_sponsored" />
+                </LinearLayout>
+            </com.faltenreich.skeletonlayout.SkeletonLayout>
 
         </LinearLayout>
     </ScrollView>
