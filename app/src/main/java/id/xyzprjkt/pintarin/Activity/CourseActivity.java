@@ -60,7 +60,6 @@ public class CourseActivity extends Activity {
         // Programming
         programingCategory = findViewById(R.id.programingCategory);
         coursePrograming = findViewById(R.id.coursePrograming);
-        coursePrograming.setHasFixedSize(true);
         coursePrograming.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL , false));
         adapterPrograming = new ProgrammingAdapter(this, videoPrograming);
         coursePrograming.setAdapter(adapterPrograming);
@@ -68,7 +67,6 @@ public class CourseActivity extends Activity {
         // Sponsored
         sponsoredCategory = findViewById(R.id.sponsoredCategory);
         courseSponsored = findViewById(R.id.courseSponsored);
-        courseSponsored.setHasFixedSize(true);
         courseSponsored.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL , false));
         adapterSponsored = new SponsoredAdapter(this, videoSponsored);
         courseSponsored.setAdapter(adapterSponsored);
@@ -122,7 +120,7 @@ public class CourseActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             } finally {
-                new Handler(Looper.getMainLooper()).postDelayed(() -> loading.showOriginal(), 2000);
+                new Handler(Looper.getMainLooper()).postDelayed(() -> loading.showOriginal(), 500);
             }
         }, error -> Log.d(TAG, "onErrorResponse: " + error.getMessage()));
         requestQueue.add(objectRequest);

@@ -1,146 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pintarinRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <LinearLayout
+    <ScrollView
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="50dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
             android:orientation="vertical">
-                <TextView
-                    android:id="@+id/pintarin_header_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="myXD"
-                    android:fontFamily="@font/poppinsblack"
-                    android:textSize="24sp"/>
-                <TextView
-                    android:id="@+id/profileName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pintarin_header_title"
-                    android:layout_alignStart="@id/pintarin_header_title"
-                    android:layout_marginBottom="8dp"
-                    android:text="Change account information"
-                    android:fontFamily="@font/poppinsmedium"
-                    android:textSize="18sp"/>
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginVertical="16dp"
-            android:orientation="horizontal"
-            android:gravity="center">
-            <androidx.cardview.widget.CardView
-                android:id="@+id/pintarinProfile"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center_vertical"
-                app:cardBackgroundColor="@android:color/system_accent1_100"
-                app:cardCornerRadius="99dp"
-                app:cardElevation="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/pintarin_header_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:text="myXD"
+                        android:fontFamily="@font/poppinsblack"
+                        android:textSize="24sp"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/profileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pintarin_header_title"
+                        android:layout_alignStart="@id/pintarin_header_title"
+                        android:layout_marginBottom="8dp"
+                        android:text="Your account information"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textSize="18sp"/>
+            </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/profileImageView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"/>
-            </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="16dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pintarinProfile"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_vertical"
+                    app:cardBackgroundColor="@android:color/system_accent1_100"
+                    app:cardCornerRadius="99dp"
+                    app:cardElevation="0dp">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/editProfilePic"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="-50dp"
-                android:layout_gravity="bottom|end"
-                app:cardBackgroundColor="@android:color/system_accent3_50"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="0dp">
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_baseline_edit_24"
-                    android:tint="@android:color/system_accent1_800"
-                    tools:ignore="UseAppTint" />
+                    <ImageView
+                        android:id="@+id/profileImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"/>
                 </androidx.cardview.widget.CardView>
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginVertical="8dp"
-            android:orientation="vertical">
-            <EditText
-                android:id="@+id/profileFullName"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/editProfilePic"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="-50dp"
+                    android:layout_gravity="bottom|end"
+                    app:cardBackgroundColor="@android:color/system_accent3_50"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_edit_24"
+                        android:tint="@android:color/system_accent1_800"
+                        tools:ignore="UseAppTint" />
+                    </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="8dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxCornerRadiusTopStart="24dp"
+                    app:boxCornerRadiusTopEnd="24dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/profileFullName"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:gravity="center_vertical"
+                        android:ems="10"
+                        android:hint="Full Name"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:inputType="textPersonName"
+                        app:boxStrokeWidth="0dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="3dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/profileTelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:gravity="center_vertical"
+                        android:ems="10"
+                        android:hint="Phone Number"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:inputType="textPersonName"
+                        app:boxStrokeWidth="0dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="3dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxCornerRadiusBottomStart="24dp"
+                    app:boxCornerRadiusBottomEnd="24dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/profileEmailAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:gravity="center_vertical"
+                        android:ems="10"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:hint="Email Address"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="18sp"
+                    android:text="Education information"
+                    android:fontFamily="@font/poppinsmedium" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxCornerRadiusTopStart="24dp"
+                    app:boxCornerRadiusTopEnd="24dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/profileUniversity"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:gravity="center_vertical"
+                        android:ems="10"
+                        android:hint="University"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:inputType="textPersonName"
+                        app:boxStrokeWidth="0dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="3dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxCornerRadiusBottomStart="24dp"
+                    app:boxCornerRadiusBottomEnd="24dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/profileDepartment"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:gravity="center_vertical"
+                        android:ems="10"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:hint="Department"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="18dp"
-                android:background="@drawable/textinput_top"
-                android:ems="10"
-                android:hint="Change Full Name"
-                android:textSize="14sp"
-                android:fontFamily="@font/poppinsmedium"
-                android:inputType="textPersonName" />
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="4dp" />
-            <EditText
-                android:id="@+id/profileEmailAddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="18dp"
-                android:background="@drawable/textinput_bot"
-                android:ems="10"
-                android:textSize="14sp"
-                android:fontFamily="@font/poppinsmedium"
-                android:hint="Change Email Address"
-                android:inputType="textEmailAddress" />
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/saveProfileInfo"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/poppinsmedium" />
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="wrap_content" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:onClick="logout"
+                    android:text="Sign out"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/poppinsmedium" />
+            </LinearLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/saveProfileInfo"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Save"
-                android:textAllCaps="false"
-                android:textColor="@android:color/system_accent1_10"
-                android:fontFamily="@font/poppinsmedium"
-                android:background="@drawable/login_button"/>
-            <View
-                android:layout_width="16dp"
-                android:layout_height="wrap_content" />
-            <Button
-                android:id="@+id/button"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:onClick="logout"
-                android:text="Sign out"
-                android:textAllCaps="false"
-                android:textColor="@android:color/system_accent1_10"
-                android:fontFamily="@font/poppinsmedium"
-                android:background="@drawable/login_button"/>
-        </LinearLayout>
-
-    </LinearLayout>
-
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

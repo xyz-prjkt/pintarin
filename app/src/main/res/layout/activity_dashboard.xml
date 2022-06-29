@@ -53,6 +53,7 @@
                     android:id="@+id/pintarinProfileImage"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:scaleType="centerCrop"
                     android:visibility="gone" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>

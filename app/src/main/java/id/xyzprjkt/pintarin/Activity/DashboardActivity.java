@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 
@@ -17,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -29,6 +31,7 @@ import id.xyzprjkt.pintarin.R;
 
 public class DashboardActivity extends Activity {
 
+    private static final String TAG = "pintarin";
     // Firebase Variable
     TextView fullName;
     FirebaseAuth fAuth;
@@ -91,6 +94,22 @@ public class DashboardActivity extends Activity {
                 Log.d("tag", "onEvent: Document do not exists");
             }
         });
+
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                        return;
+                    }
+
+                    // Get new FCM registration token
+                    String token = task.getResult();
+
+                    // Log and toast
+                    String msg = getString(R.string.msg_token_fmt, token);
+                    Log.d(TAG, msg);
+                    Toast.makeText(DashboardActivity.this, msg, Toast.LENGTH_SHORT).show();
+                });
     }
 
     @Override

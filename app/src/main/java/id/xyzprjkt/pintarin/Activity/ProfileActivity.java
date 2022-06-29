@@ -30,11 +30,19 @@ import id.xyzprjkt.pintarin.R;
 
 public class ProfileActivity extends Activity {
 
-    public static final String TAG = "TAG";
-    CardView editProfilePicBtn;
-    EditText profileFullName,profileEmail;
+    // Profile Picture Variable
     ImageView profileImageView;
+    CardView editProfilePicBtn;
+
+    // Account Information Variable
+    EditText profileFullName,
+             profilePhone,
+             profileEmail,
+             profileUniv,
+             profileDepart;
     Button saveBtn;
+
+    // Google Firebase
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
@@ -47,29 +55,52 @@ public class ProfileActivity extends Activity {
         setContentView(R.layout.activity_profile);
 
         Intent data = getIntent();
-        final String fullName = data.getStringExtra("fullName");
+
+        String fullName = data.getStringExtra("fullName");
+        String phone = data.getStringExtra("phone");
         String email = data.getStringExtra("email");
 
+        String univ = data.getStringExtra("univ");
+        String depart = data.getStringExtra("depart");
+
+        // Firebase initializations
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         user = fAuth.getCurrentUser();
         userId = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
         storageReference = FirebaseStorage.getInstance().getReference();
 
-        profileFullName = findViewById(R.id.profileFullName);
-        profileEmail = findViewById(R.id.profileEmailAddress);
+        /*  User information initializations
+            This ID values will be replaced from Firebase Firestore database
+        */
+        // Main User informations ID
         profileImageView = findViewById(R.id.profileImageView);
         editProfilePicBtn = findViewById(R.id.editProfilePic);
+        profileFullName = findViewById(R.id.profileFullName);
+        profilePhone = findViewById(R.id.profileTelp);
+        profileEmail = findViewById(R.id.profileEmailAddress);
+
+        // Education informations ID
+        profileUniv = findViewById(R.id.profileUniversity);
+        profileDepart  = findViewById(R.id.profileDepartment);
+
         saveBtn = findViewById(R.id.saveProfileInfo);
 
+        // Fetch User Profile Pic from Firebase Storage
         StorageReference profileRef = storageReference.child("users/"+ Objects.requireNonNull(fAuth.getCurrentUser()).getUid()+"/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(uri -> Picasso.get().load(uri).into(profileImageView));
 
+        // Fetch User information from Firebase Storage
         DocumentReference documentReference = fStore.collection("users").document(userId);
         documentReference.addSnapshotListener(this, (documentSnapshot, e) -> {
             if(Objects.requireNonNull(documentSnapshot).exists()){
-                profileFullName.setHint(documentSnapshot.getString( "fName"));
-                profileEmail.setHint(documentSnapshot.getString( "email"));
+                // Set Main User Informations
+                profileFullName.setText(documentSnapshot.getString( "fName"));
+                profilePhone.setText(documentSnapshot.getString( "phone"));
+                profileEmail.setText(documentSnapshot.getString( "email"));
+                // Set User Education Informations
+                profileUniv.setText(documentSnapshot.getString( "univ"));
+                profileDepart.setText(documentSnapshot.getString( "depart"));
             } else {
                 Log.d("tag", "onEvent: Document do not exists");
             }
@@ -77,14 +108,12 @@ public class ProfileActivity extends Activity {
 
         editProfilePicBtn.setOnClickListener(v -> {
             Intent pickProfilePicIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            pickProfilePicIntent.setType("image/*");
-            pickProfilePicIntent.putExtra("crop", "true");
             startActivityForResult(pickProfilePicIntent,1000);
         });
 
         saveBtn.setOnClickListener(v -> {
             if(profileFullName.getText().toString().isEmpty() || profileEmail.getText().toString().isEmpty()){
-                Toast.makeText(ProfileActivity.this, "One or Many fields are empty.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfileActivity.this, "Name and Email are empty", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -92,21 +121,26 @@ public class ProfileActivity extends Activity {
             user.updateEmail(email1).addOnSuccessListener(aVoid -> {
                 DocumentReference docRef = fStore.collection("users").document(user.getUid());
                 Map<String,Object> edited = new HashMap<>();
+
                 edited.put("email", email1);
+                edited.put("phone",profilePhone.getText().toString());
                 edited.put("fName",profileFullName.getText().toString());
+
+                edited.put("univ",profileUniv.getText().toString());
+                edited.put("depart",profileDepart.getText().toString());
+
                 docRef.update(edited).addOnSuccessListener(aVoid1 -> {
-                    Toast.makeText(ProfileActivity.this, "Profile Updated", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
                     finish();
                 });
-                Toast.makeText(ProfileActivity.this, "Email is changed.", Toast.LENGTH_SHORT).show();
-            }).addOnFailureListener(e -> Toast.makeText(ProfileActivity.this,   e.getMessage(), Toast.LENGTH_SHORT).show());
+            }).addOnFailureListener(e -> Toast.makeText(ProfileActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show());
         });
         profileEmail.setText(email);
+        profilePhone.setText(phone);
         profileFullName.setText(fullName);
-        Log.d(TAG, "onCreate: " + fullName + " " + email);
+        profileUniv.setText(univ);
+        profileDepart.setText(depart);
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @androidx.annotation.Nullable Intent data) {
@@ -127,7 +161,7 @@ public class ProfileActivity extends Activity {
     }
 
     public void logout(View view) {
-        FirebaseAuth.getInstance().signOut();//logout
+        FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(),LoginActivity.class));
         finish();
     }
