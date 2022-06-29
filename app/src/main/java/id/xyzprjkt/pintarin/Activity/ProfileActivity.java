@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.cardview.widget.CardView;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -29,12 +31,14 @@ import id.xyzprjkt.pintarin.R;
 public class ProfileActivity extends Activity {
 
     public static final String TAG = "TAG";
+    CardView editProfilePicBtn;
     EditText profileFullName,profileEmail;
     ImageView profileImageView;
     Button saveBtn;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     FirebaseUser user;
+    String userId;
     StorageReference storageReference;
 
     @Override
@@ -49,17 +53,29 @@ public class ProfileActivity extends Activity {
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         user = fAuth.getCurrentUser();
+        userId = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
         storageReference = FirebaseStorage.getInstance().getReference();
 
         profileFullName = findViewById(R.id.profileFullName);
         profileEmail = findViewById(R.id.profileEmailAddress);
         profileImageView = findViewById(R.id.profileImageView);
+        editProfilePicBtn = findViewById(R.id.editProfilePic);
         saveBtn = findViewById(R.id.saveProfileInfo);
 
         StorageReference profileRef = storageReference.child("users/"+ Objects.requireNonNull(fAuth.getCurrentUser()).getUid()+"/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(uri -> Picasso.get().load(uri).into(profileImageView));
 
-        profileImageView.setOnClickListener(v -> {
+        DocumentReference documentReference = fStore.collection("users").document(userId);
+        documentReference.addSnapshotListener(this, (documentSnapshot, e) -> {
+            if(Objects.requireNonNull(documentSnapshot).exists()){
+                profileFullName.setHint(documentSnapshot.getString( "fName"));
+                profileEmail.setHint(documentSnapshot.getString( "email"));
+            } else {
+                Log.d("tag", "onEvent: Document do not exists");
+            }
+        });
+
+        editProfilePicBtn.setOnClickListener(v -> {
             Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(openGalleryIntent,1000);
         });

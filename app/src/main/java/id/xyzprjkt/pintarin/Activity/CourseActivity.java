@@ -1,10 +1,12 @@
 package id.xyzprjkt.pintarin.Activity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,15 +24,15 @@ import java.util.List;
 import java.util.Objects;
 
 import id.xyzprjkt.pintarin.R;
-import id.xyzprjkt.pintarin.VideoController.Programming.ProgrammingVideo;
 import id.xyzprjkt.pintarin.VideoController.Programming.ProgrammingAdapter;
-
-import id.xyzprjkt.pintarin.VideoController.Sponsored.SponsoredVideo;
+import id.xyzprjkt.pintarin.VideoController.Programming.ProgrammingVideo;
 import id.xyzprjkt.pintarin.VideoController.Sponsored.SponsoredAdapter;
+import id.xyzprjkt.pintarin.VideoController.Sponsored.SponsoredVideo;
 
-
-public class CourseActivity extends AppCompatActivity {
+public class CourseActivity extends Activity {
     public static final String TAG = "TAG";
+
+    TextView programingCategory, sponsoredCategory;
     RecyclerView coursePrograming, courseSponsored;
 
     ProgrammingAdapter adapterPrograming;
@@ -43,13 +45,13 @@ public class CourseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
-        Objects.requireNonNull(getSupportActionBar()).hide();
 
         // Stored Video
         videoPrograming = new ArrayList<>();
         videoSponsored = new ArrayList<>();
 
         // Programming
+        programingCategory = findViewById(R.id.programingCategory);
         coursePrograming = findViewById(R.id.coursePrograming);
         coursePrograming.setHasFixedSize(true);
         coursePrograming.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL , false));
@@ -57,6 +59,7 @@ public class CourseActivity extends AppCompatActivity {
         coursePrograming.setAdapter(adapterPrograming);
 
         // Sponsored
+        sponsoredCategory = findViewById(R.id.sponsoredCategory);
         courseSponsored = findViewById(R.id.courseSponsored);
         courseSponsored.setHasFixedSize(true);
         courseSponsored.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL , false));
@@ -89,6 +92,7 @@ public class CourseActivity extends AppCompatActivity {
                     fetchedVid.setImageUrl(video.getString("thumb"));
                     JSONArray videoUrl = video.getJSONArray("sources");
                     fetchedVid.setVideoUrl(videoUrl.getString(0));
+                    programingCategory.setVisibility(View.VISIBLE);
                     videoPrograming.add(fetchedVid);
                     adapterPrograming.notifyDataSetChanged();
                 }
@@ -104,6 +108,7 @@ public class CourseActivity extends AppCompatActivity {
                     fetchedVid.setImageUrl(video.getString("thumb"));
                     JSONArray videoUrl = video.getJSONArray("sources");
                     fetchedVid.setVideoUrl(videoUrl.getString(0));
+                    sponsoredCategory.setVisibility(View.VISIBLE);
                     videoSponsored.add(fetchedVid);
                     adapterSponsored.notifyDataSetChanged();
                 }

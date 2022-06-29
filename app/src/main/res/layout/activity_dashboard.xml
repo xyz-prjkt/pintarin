@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pintarinRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -50,7 +52,7 @@
                     android:id="@+id/pintarinProfileImage"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/umm_logo" />
+                    android:visibility="gone" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
 
@@ -67,20 +69,34 @@
                 app:cardBackgroundColor="@android:color/system_accent3_50"
                 style="@style/pintarinCardStyle">
 
-                <FrameLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="18dp">
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/animationView"
+                        android:layout_width="150dp"
+                        android:layout_height="190dp"
+                        android:scaleType="centerCrop"
+                        app:lottie_rawRes="@raw/person"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Course Banner Placeholder"
-                        android:textSize="18sp"
-                        android:fontFamily="@font/poppinsmedium"/>
+                        android:layout_marginEnd="24dp"
+                        android:text="Happy\nlearning"
+                        android:lineSpacingMultiplier="0.90"
+                        android:textSize="32sp"
+                        android:textAlignment="textEnd"
+                        android:justificationMode="inter_word"
+                        android:fontFamily="@font/poppinsblack"/>
 
-                </FrameLayout>
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -94,16 +110,26 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/pintarinCourse"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="150dp"
                 app:cardBackgroundColor="@android:color/system_neutral2_50"
                 style="@style/pintarinCardStyle">
 
-                <FrameLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_margin="18dp">
+                    android:layout_margin="18dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@id/icon"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_marginVertical="8dp"
+                        android:src="@drawable/ic_baseline_menu_book_24"
+                        android:tint="@android:color/system_accent1_800"
+                        tools:ignore="UseAppTint" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -112,7 +138,7 @@
                         android:textSize="18sp"
                         android:fontFamily="@font/poppinsmedium"/>
 
-                </FrameLayout>
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -127,20 +153,32 @@
                 app:cardBackgroundColor="@android:color/system_accent2_50"
                 style="@style/pintarinCardStyle">
 
-                <FrameLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_margin="18dp">
+                    android:layout_margin="18dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/icon"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_marginVertical="8dp"
+                        android:src="@drawable/ic_baseline_info_24"
+                        android:tint="@android:color/system_accent1_800"
+                        tools:ignore="UseAppTint" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/icon"
+                        android:layout_alignStart="@id/icon"
                         android:text="About"
                         android:textSize="18sp"
                         android:fontFamily="@font/poppinsmedium"/>
 
-                </FrameLayout>
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 

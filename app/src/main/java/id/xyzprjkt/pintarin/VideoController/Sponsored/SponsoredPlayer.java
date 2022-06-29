@@ -1,5 +1,6 @@
 package id.xyzprjkt.pintarin.VideoController.Sponsored;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -18,15 +19,11 @@ import android.widget.TextView;
 import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import java.util.Objects;
-
 import id.xyzprjkt.pintarin.R;
-import id.xyzprjkt.pintarin.VideoController.Programming.ProgrammingVideo;
 
-public class SponsoredPlayer extends AppCompatActivity {
+public class SponsoredPlayer extends Activity {
 
     ProgressBar spiiner;
     ImageView fullScreenOp;
@@ -37,7 +34,6 @@ public class SponsoredPlayer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
-        Objects.requireNonNull(getSupportActionBar()).hide();
         spiiner = findViewById(R.id.progressBar);
         fullScreenOp = findViewById(R.id.fullScreenOp);
         frameLayout = findViewById(R.id.frameLayout);
@@ -62,7 +58,6 @@ public class SponsoredPlayer extends AppCompatActivity {
         fullScreenOp.setOnClickListener(v1 -> {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            getSupportActionBar().hide();
             fullScreenOp.setVisibility(View.GONE);
             frameLayout.setLayoutParams(new ConstraintLayout.LayoutParams(new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)));
             videoPlayer.setLayoutParams(new FrameLayout.LayoutParams(new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)));

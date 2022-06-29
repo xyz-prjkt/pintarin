@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -79,13 +80,13 @@ public class DashboardActivity extends Activity {
         user = fAuth.getCurrentUser();
 
         StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
+        profilePic.setVisibility(View.VISIBLE);
         profileRef.getDownloadUrl().addOnSuccessListener(uri -> Picasso.get().load(uri).into(profilePic));
 
         DocumentReference documentReference = fStore.collection("users").document(userId);
         documentReference.addSnapshotListener(this, (documentSnapshot, e) -> {
             if(Objects.requireNonNull(documentSnapshot).exists()){
                 fullName.setText(getString(R.string.user_name_welcome ) + ", " + documentSnapshot.getString( "fName"));
-
             } else {
                 Log.d("tag", "onEvent: Document do not exists");
             }

@@ -3,8 +3,6 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.Material3.DynamicColors.DayNight">
         <item name="actionBarStyle">@style/AppTheme.ActionBar</item>
-        <item name="colorPrimary">@android:color/transparent</item>
-        <item name="colorPrimaryDark">@android:color/transparent</item>
         <item name="scrimBackground">@color/mtrl_scrim_color</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowLightStatusBar">@bool/use_light_system_bars</item>

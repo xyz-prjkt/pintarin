@@ -28,15 +28,15 @@
             android:orientation="vertical"
             android:layout_marginBottom="24dp">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/welcome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsblack"
                 android:text="Bonjour"
-                android:textSize="45sp" />
+                android:textSize="45sp"/>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,41 +54,50 @@
             android:layout_below="@id/header"
             android:layout_alignStart="@id/header">
 
-            <EditText
-                android:id="@+id/Email"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textinput_top"
-                android:ems="10"
                 android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:padding="18dp"
-                android:textSize="14sp"
-                android:fontFamily="@font/poppinsmedium"/>
+                app:boxCornerRadiusTopStart="24dp"
+                app:boxCornerRadiusTopEnd="24dp"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
-            <EditText
-                android:id="@+id/password"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Email"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/textinput_bot"
-                android:ems="10"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:padding="18dp"
-                android:textSize="14sp"
-                android:fontFamily="@font/poppinsmedium" />
+                app:boxCornerRadiusBottomStart="24dp"
+                app:boxCornerRadiusBottomEnd="24dp"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
-            <Button
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Password"
+                    android:textSize="14sp"
+                    android:inputType="textPassword"
+                    android:fontFamily="@font/poppinsmedium"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/loginBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/login_button"
                 android:layout_marginTop="16dp"
+                android:padding="16dp"
                 android:text="Sign in"
-                android:textSize="13sp"
-                android:textColor="@android:color/system_accent1_10"
-                android:elevation="0dp"
+                android:textAllCaps="false"
                 android:fontFamily="@font/poppinsblack"/>
 
         </LinearLayout>
@@ -101,7 +110,7 @@
             android:layout_below="@id/panel"
             android:layout_alignStart="@id/panel">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/createText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

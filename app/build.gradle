@@ -3,6 +3,7 @@ plugins {
 }
 
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdk 31
@@ -52,4 +53,7 @@ dependencies {
     implementation "com.airbnb.android:lottie:5.2.0"
     implementation "com.hanks:htextview-base:0.1.6"
     implementation "com.hanks:htextview-fade:0.1.6"
+    implementation "androidx.core:core-ktx:1.8.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.github.KieronQuinn:MonetCompat:0.4.1'
 }

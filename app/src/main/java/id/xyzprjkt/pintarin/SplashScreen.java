@@ -1,4 +1,4 @@
-package id.xyzprjkt.pintarin.VideoController;
+package id.xyzprjkt.pintarin;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -8,15 +8,15 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.kieronquinn.monetcompat.app.MonetCompatActivity;
 
 import java.util.Objects;
 
 import id.xyzprjkt.pintarin.Activity.DashboardActivity;
 import id.xyzprjkt.pintarin.Activity.LoginActivity;
-import id.xyzprjkt.pintarin.R;
 
 @SuppressLint("CustomSplashScreen")
-public class SplashScreen extends AppCompatActivity {
+public class SplashScreen extends MonetCompatActivity {
 
     FirebaseAuth fAuth;
 
@@ -34,8 +34,7 @@ public class SplashScreen extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                 finish();
             } else {
-                Intent home = new Intent(SplashScreen.this, LoginActivity.class);
-                startActivity(home);
+                startActivity(new Intent(SplashScreen.this, LoginActivity.class));
                 finish();
             }
         }, delay);
