@@ -76,8 +76,10 @@ public class ProfileActivity extends Activity {
         });
 
         editProfilePicBtn.setOnClickListener(v -> {
-            Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            startActivityForResult(openGalleryIntent,1000);
+            Intent pickProfilePicIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            pickProfilePicIntent.setType("image/*");
+            pickProfilePicIntent.putExtra("crop", "true");
+            startActivityForResult(pickProfilePicIntent,1000);
         });
 
         saveBtn.setOnClickListener(v -> {
@@ -129,4 +131,5 @@ public class ProfileActivity extends Activity {
         startActivity(new Intent(getApplicationContext(),LoginActivity.class));
         finish();
     }
+
 }

@@ -101,4 +101,12 @@ public class DashboardActivity extends Activity {
             snackBar.show();
         }
     }
+
+    @Override
+    protected void onStart() {
+        StorageReference profileRef = storageReference.child("users/"+ Objects.requireNonNull(fAuth.getCurrentUser()).getUid()+"/profile.jpg");
+        profilePic.setVisibility(View.VISIBLE);
+        profileRef.getDownloadUrl().addOnSuccessListener(uri -> Picasso.get().load(uri).into(profilePic));
+        super.onStart();
+    }
 }

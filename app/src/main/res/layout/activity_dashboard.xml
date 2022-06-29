@@ -46,6 +46,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
+                app:cardBackgroundColor="@android:color/system_accent1_100"
                 app:cardCornerRadius="99dp"
                 app:cardElevation="0dp">
                 <ImageView

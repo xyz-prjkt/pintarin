@@ -49,6 +49,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center_vertical"
+                app:cardBackgroundColor="@android:color/system_accent1_100"
                 app:cardCornerRadius="99dp"
                 app:cardElevation="0dp">
 
@@ -56,8 +57,7 @@
                     android:id="@+id/profileImageView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/umm_logo"/>
+                    android:scaleType="centerCrop"/>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
