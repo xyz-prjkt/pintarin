@@ -84,8 +84,4 @@ public class RegisterActivity extends Activity {
         });
         mLoginBtn.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), LoginActivity.class)));
     }
-    @Override
-    public void onBackPressed() {
-        this.finishAffinity();
-    }
 }

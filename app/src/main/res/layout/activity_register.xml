@@ -94,6 +94,7 @@
                 android:layout_height="wrap_content"
                 app:boxCornerRadiusBottomStart="24dp"
                 app:boxCornerRadiusBottomEnd="24dp"
+                app:passwordToggleEnabled="true"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
@@ -121,16 +122,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_marginTop="24dp"
             android:layout_below="@id/panel"
             android:layout_alignStart="@id/panel">
 
             <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already Registered?"
+                android:fontFamily="@font/poppinsmedium"/>
+
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/createText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Already Registered ? Login Here"
+                android:text=" Sign in here"
+                android:textColor="@android:color/system_accent3_400"
                 android:fontFamily="@font/poppinsmedium"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
