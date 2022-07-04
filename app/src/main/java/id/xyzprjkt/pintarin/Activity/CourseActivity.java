@@ -75,7 +75,7 @@ public class CourseActivity extends Activity {
     }
 
     private void getJsonData() {
-        String URL = "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/data.json?alt=media&token=6027c6f3-34a2-4978-af61-74a14a9a25ba";
+        String URL = "https://raw.githubusercontent.com/xyz-prjkt/pintar.in/master/videoDB.json";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         @SuppressLint("NotifyDataSetChanged") JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET, URL, null, response -> {
             try {
@@ -119,10 +119,9 @@ public class CourseActivity extends Activity {
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
-            } finally {
-                new Handler(Looper.getMainLooper()).postDelayed(() -> loading.showOriginal(), 500);
             }
         }, error -> Log.d(TAG, "onErrorResponse: " + error.getMessage()));
         requestQueue.add(objectRequest);
+        new Handler(Looper.getMainLooper()).postDelayed(() -> loading.showOriginal(), 2000);
     }
 }

@@ -1,0 +1,55 @@
+{
+  "categories": [
+    {
+      "programingVideos": [
+        {
+          "title": "Apa itu informatika?",
+          "author": "Kiara Zara",
+          "description": "Kalau kalian tertarik dengan bidang IT tapi masih bingung dengan jurusan yang akan kalian pilih, yuk simak video ini. kami akan menjelaskan kepada kalian tentang jurusan informatika yang akan membantu kalian untuk mengembangkan bakat dan minat kalian! simak dengan baik ya supaya tidak sampai salah jurusan!",
+          "sources": [
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/1_Introducing_IT.mp4"
+          ],
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/1_Introducing_IT_thumb.jpg"
+        },
+        {
+          "title": "Logika Proposisi | Part 1",
+          "author": "Rosydan Amru",
+          "description": "",
+          "sources": [
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/2_LogikaProposisi_p1.mp4"
+          ],
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/2_LogikaProposisi_p1_thumb.png"
+        }
+      ],
+      "sponsoredVideos": [
+        {
+          "title": "⏁⊑⟒ ⟟⋏⎐⏃⌇⟟⍜⋏ ⍜⎎ ⌇⟟⋔⌿⌰⊬",
+          "author": "xyzuan",
+          "description": "No one can escape from S I M P L Y",
+          "sources": [
+            "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/courseDB%2FsponsoredContent%2FSimply%20Invasion.mp4?alt=media&token=92311c30-50a7-42e7-aa17-da18feb8e90a"
+          ],
+          "thumb": "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/courseDB%2FsponsoredContent%2FSimply%20Invasion.png?alt=media&token=a8e8bf36-ccdf-4208-9167-90af0065751c"
+        },
+        {
+          "title": "Hi, xdroidOSS 2.0",
+          "author": "xyzuan",
+          "description": "xdroid is an AOSP-based custom Android ROM which is focusing on simple and minimalism while keeping the smoothness and optimization provided by AOSP",
+          "sources": [
+            "https://raw.githubusercontent.com/xyz-prjkt/pintar.in_db/main/Hi%2C%20xdroid%202.0%20-o.mp4"
+          ],
+          "thumb": "https://raw.githubusercontent.com/xyz-prjkt/pintar.in_db/main/anak.webp"
+        },
+        {
+          "title": "Review xdroid 1.3 OBT di Xiaomi Redmi Note 7",
+          "author": "xdroidOSS",
+          "description": "Review update custom rom xdroid 1.3 OBT edisi Dirgahayu Republik Indonesia ke 76 di Xiaomi Redmi Note 7",
+          "sources": [
+            "https://github.com/xyz-prjkt/pintar.in_db/blob/main/Review%20xdroid%201.3%20OBT%20di%20Xiaomi%20Redmi%20Note%207.mkv?raw=true"
+          ],
+          "thumb": "https://raw.githubusercontent.com/xyz-prjkt/pintar.in_db/main/sddefault.webp"
+        }
+      ]
+    }
+  ]
+}
