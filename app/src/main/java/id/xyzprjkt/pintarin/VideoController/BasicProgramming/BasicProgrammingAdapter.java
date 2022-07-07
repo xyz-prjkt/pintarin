@@ -20,11 +20,11 @@ import java.util.List;
 import id.xyzprjkt.pintarin.R;
 
 public class BasicProgrammingAdapter extends RecyclerView.Adapter<BasicProgrammingAdapter.ViewHolder> {
-    private final List<BasicProgrammingVideo> allProgrammingVideos;
+    private final List<BasicProgrammingVideo> allBasicProgrammingVideos;
     private final Context context;
 
-    public BasicProgrammingAdapter(Context ctx, List<BasicProgrammingVideo> programmingVideos){
-        this.allProgrammingVideos = programmingVideos;
+    public BasicProgrammingAdapter(Context ctx, List<BasicProgrammingVideo> basicProgrammingVideos){
+        this.allBasicProgrammingVideos = basicProgrammingVideos;
         this.context = ctx;
     }
 
@@ -37,13 +37,13 @@ public class BasicProgrammingAdapter extends RecyclerView.Adapter<BasicProgrammi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
-        holder.title.setText(allProgrammingVideos.get(position).getTitle());
-        holder.author.setText(allProgrammingVideos.get(position).getAuthor());
-        Picasso.get().load(allProgrammingVideos.get(position).getImageUrl()).into(holder.videoImage);
+        holder.title.setText(allBasicProgrammingVideos.get(position).getTitle());
+        holder.author.setText(allBasicProgrammingVideos.get(position).getAuthor());
+        Picasso.get().load(allBasicProgrammingVideos.get(position).getImageUrl()).into(holder.videoImage);
 
         holder.vv.setOnClickListener(v -> {
             Bundle b = new Bundle();
-            b.putSerializable("videoData", allProgrammingVideos.get(position));
+            b.putSerializable("videoData", allBasicProgrammingVideos.get(position));
             Intent i = new Intent(context, BasicProgramingPlayer.class);
             i.putExtras(b);
             v.getContext().startActivity(i);
@@ -53,7 +53,7 @@ public class BasicProgrammingAdapter extends RecyclerView.Adapter<BasicProgrammi
 
     @Override
     public int getItemCount() {
-        return allProgrammingVideos.size();
+        return allBasicProgrammingVideos.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

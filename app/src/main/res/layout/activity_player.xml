@@ -23,25 +23,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical">
-                <VideoView
-                    android:id="@+id/videoView"
+                <com.google.android.exoplayer2.ui.PlayerView
+                    android:id="@+id/player_view"
+                    android:focusable="true"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    style="?android:attr/progressBarStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center" />
-                <ImageView
-                    android:id="@+id/fullScreenOp"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="end"
-                    android:padding="5dp"
-                    app:tint="@android:color/white"
-                    app:srcCompat="@drawable/ic_baseline_fullscreen_24"
-                    android:contentDescription="TODO"/>
+                    android:layout_height="match_parent"/>
             </FrameLayout>
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.card.MaterialCardView

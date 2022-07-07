@@ -2,80 +2,47 @@ package id.xyzprjkt.pintarin.VideoController.Programming;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.TypedValue;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.MediaController;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.VideoView;
 
-import androidx.annotation.NonNull;
+import com.google.android.exoplayer2.ExoPlayer;
+import com.google.android.exoplayer2.MediaItem;
+import com.google.android.exoplayer2.ui.PlayerView;
 
 import id.xyzprjkt.pintarin.R;
 
 public class ProgramingPlayer extends Activity {
 
-    ProgressBar spiiner;
-    ImageView fullScreenOp;
     FrameLayout frameLayout;
-    VideoView videoPlayer;
+    ExoPlayer exoPlayer;
+    PlayerView playerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
-        spiiner = findViewById(R.id.progressBar);
-        fullScreenOp = findViewById(R.id.fullScreenOp);
         frameLayout = findViewById(R.id.frameLayout);
         Intent i = getIntent();
         Bundle data = i.getExtras();
         ProgrammingVideo v = (ProgrammingVideo) data.getSerializable("videoData");
         TextView title = findViewById(R.id.videoTitle);
         TextView desc = findViewById(R.id.videoDesc);
-        videoPlayer = findViewById(R.id.videoView);
         title.setText(v.getTitle());
         desc.setText(v.getDescription());
-        Uri videoUrl = Uri.parse(v.getVideoUrl());
-        videoPlayer.setVideoURI(videoUrl);
-        MediaController mc = new MediaController(this);
-        videoPlayer.setMediaController(mc);
-
-        videoPlayer.setOnPreparedListener(mp -> {
-            videoPlayer.start();
-            spiiner.setVisibility(View.GONE);
-        });
-        
-        fullScreenOp.setOnClickListener(v1 -> {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            fullScreenOp.setVisibility(View.GONE);
-            frameLayout.setLayoutParams(new LinearLayout.LayoutParams(new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)));
-            videoPlayer.setLayoutParams(new FrameLayout.LayoutParams(new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)));
-        });
+        exoPlayer = new ExoPlayer.Builder(this).build();
+        playerView = findViewById(R.id.player_view);
+        playerView.setPlayer(exoPlayer);
+        MediaItem mediaItem = MediaItem.fromUri(Uri.parse(v.getVideoUrl()));
+        exoPlayer.addMediaItem(mediaItem);
+        exoPlayer.prepare();
+        exoPlayer.setPlayWhenReady(true);
     }
 
     @Override
-    public void onBackPressed() {
-        fullScreenOp.setVisibility(View.VISIBLE);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
-        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        int heightValue = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,220,getResources().getDisplayMetrics());
-        frameLayout.setLayoutParams(new LinearLayout.LayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,heightValue)));
-        videoPlayer.setLayoutParams(new FrameLayout.LayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,heightValue)));
-        int orientation = getResources().getConfiguration().orientation;
-        
-        if(orientation == Configuration.ORIENTATION_PORTRAIT){
-            super.onBackPressed();
-        }
+    protected void onDestroy() {
+        super.onDestroy();
+        exoPlayer.release();
     }
 }
