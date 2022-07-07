@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "771738376966",
-    "project_id": "pintarin-labit2022",
-    "storage_bucket": "pintarin-labit2022.appspot.com"
+    "project_number": "736798725521",
+    "project_id": "pintarin2-a4389",
+    "storage_bucket": "pintarin2-a4389.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:771738376966:android:07f9a89770c6b19e9a1c87",
+        "mobilesdk_app_id": "1:736798725521:android:a5f997c65ba77ac3f9f630",
         "android_client_info": {
           "package_name": "id.xyzprjkt.pintarin"
         }
       },
       "oauth_client": [
         {
-          "client_id": "771738376966-ptnscdr3lduvko66bbmr55k6osuf9jbo.apps.googleusercontent.com",
+          "client_id": "736798725521-svi5v34hdqg3200i29peh9rksp1qdjm3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB5VS8DN8iKVqQUeLTo4GRcjMylpwqUwQw"
+          "current_key": "AIzaSyCw15oNWcHcxSknfN8zzeu7giAGFMa8AcY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "771738376966-ptnscdr3lduvko66bbmr55k6osuf9jbo.apps.googleusercontent.com",
+              "client_id": "736798725521-svi5v34hdqg3200i29peh9rksp1qdjm3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
