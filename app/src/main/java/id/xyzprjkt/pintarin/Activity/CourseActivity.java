@@ -26,6 +26,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import id.xyzprjkt.pintarin.R;
+import id.xyzprjkt.pintarin.VideoController.BasicProgramming.BasicProgrammingAdapter;
+import id.xyzprjkt.pintarin.VideoController.BasicProgramming.BasicProgrammingVideo;
 import id.xyzprjkt.pintarin.VideoController.Programming.ProgrammingAdapter;
 import id.xyzprjkt.pintarin.VideoController.Programming.ProgrammingVideo;
 import id.xyzprjkt.pintarin.VideoController.Sponsored.SponsoredAdapter;
@@ -34,13 +36,15 @@ import id.xyzprjkt.pintarin.VideoController.Sponsored.SponsoredVideo;
 public class CourseActivity extends Activity {
     public static final String TAG = "TAG";
 
-    TextView programingCategory, sponsoredCategory;
-    RecyclerView coursePrograming, courseSponsored;
+    TextView programingCategory, basicProgramingCategory, sponsoredCategory;
+    RecyclerView coursePrograming, courseBasicPrograming, courseSponsored;
 
     ProgrammingAdapter adapterPrograming;
+    BasicProgrammingAdapter adapterBasicPrograming;
     SponsoredAdapter adapterSponsored;
 
     List<ProgrammingVideo> videoPrograming;
+    List<BasicProgrammingVideo> videoBasicPrograming;
     List<SponsoredVideo> videoSponsored;
 
     private Skeleton loading;
@@ -56,6 +60,7 @@ public class CourseActivity extends Activity {
         // Stored Video
         videoPrograming = new ArrayList<>();
         videoSponsored = new ArrayList<>();
+        videoBasicPrograming = new ArrayList<>();
 
         // Programming
         programingCategory = findViewById(R.id.programingCategory);
@@ -63,6 +68,13 @@ public class CourseActivity extends Activity {
         coursePrograming.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL , false));
         adapterPrograming = new ProgrammingAdapter(this, videoPrograming);
         coursePrograming.setAdapter(adapterPrograming);
+
+        // Basic Programming
+        basicProgramingCategory = findViewById(R.id.basicProgramingCategory);
+        courseBasicPrograming = findViewById(R.id.courseBasicPrograming);
+        courseBasicPrograming.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL , false));
+        adapterBasicPrograming = new BasicProgrammingAdapter(this, videoBasicPrograming);
+        courseBasicPrograming.setAdapter(adapterBasicPrograming);
 
         // Sponsored
         sponsoredCategory = findViewById(R.id.sponsoredCategory);
@@ -84,6 +96,7 @@ public class CourseActivity extends Activity {
 
                 // Categories
                 JSONArray categoriesPrograming = categoriesData.getJSONArray("programingVideos");
+                JSONArray categoriesBasicPrograming = categoriesData.getJSONArray("basicProgramingVideos");
                 JSONArray categoriesSponsored = categoriesData.getJSONArray("sponsoredVideos");
 
                 for (int i = 0; i < categoriesPrograming.length();i++){
@@ -102,6 +115,22 @@ public class CourseActivity extends Activity {
                     adapterPrograming.notifyDataSetChanged();
                 }
 
+                for (int i = 0; i < categoriesBasicPrograming.length();i++){
+                    JSONObject video = categoriesBasicPrograming.getJSONObject(i);
+
+                    BasicProgrammingVideo fetchedVid = new BasicProgrammingVideo();
+
+                    fetchedVid.setTitle(video.getString("title"));
+                    fetchedVid.setDescription(video.getString("description"));
+                    fetchedVid.setAuthor(video.getString("author"));
+                    fetchedVid.setImageUrl(video.getString("thumb"));
+                    JSONArray videoUrl = video.getJSONArray("sources");
+                    fetchedVid.setVideoUrl(videoUrl.getString(0));
+                    basicProgramingCategory.setVisibility(View.VISIBLE);
+                    videoBasicPrograming.add(fetchedVid);
+                    adapterBasicPrograming.notifyDataSetChanged();
+                }
+
                 for (int i = 0; i < categoriesSponsored.length();i++){
                     JSONObject video = categoriesSponsored.getJSONObject(i);
 
@@ -117,6 +146,7 @@ public class CourseActivity extends Activity {
                     videoSponsored.add(fetchedVid);
                     adapterSponsored.notifyDataSetChanged();
                 }
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

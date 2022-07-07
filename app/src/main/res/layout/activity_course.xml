@@ -55,6 +55,7 @@
                     android:orientation="vertical">
                     <!-- Course Content -->
                     <include layout="@layout/content_programing" />
+                    <include layout="@layout/content_basicprograming" />
                     <include layout="@layout/content_sponsored" />
                 </LinearLayout>
             </com.faltenreich.skeletonlayout.SkeletonLayout>

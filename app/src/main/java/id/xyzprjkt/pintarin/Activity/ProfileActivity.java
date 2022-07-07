@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 
+import com.faltenreich.skeletonlayout.Skeleton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -32,7 +33,9 @@ public class ProfileActivity extends Activity {
 
     // Profile Picture Variable
     ImageView profileImageView;
-    CardView editProfilePicBtn;
+    CardView profilePicCard, editProfilePicBtn;
+
+    Skeleton loading;
 
     // Account Information Variable
     EditText profileFullName,
@@ -75,6 +78,7 @@ public class ProfileActivity extends Activity {
         */
         // Main User informations ID
         profileImageView = findViewById(R.id.profileImageView);
+        profilePicCard = findViewById(R.id.pintarinProfileCard);
         editProfilePicBtn = findViewById(R.id.editProfilePic);
         profileFullName = findViewById(R.id.profileFullName);
         profilePhone = findViewById(R.id.profileTelp);
@@ -86,9 +90,13 @@ public class ProfileActivity extends Activity {
 
         saveBtn = findViewById(R.id.saveProfileInfo);
 
+        loading = findViewById(R.id.skeletonLayout);
+        loading.showSkeleton();
+
         // Fetch User Profile Pic from Firebase Storage
         StorageReference profileRef = storageReference.child("users/"+ Objects.requireNonNull(fAuth.getCurrentUser()).getUid()+"/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(uri -> Picasso.get().load(uri).into(profileImageView));
+        loading.showOriginal();
 
         // Fetch User information from Firebase Storage
         DocumentReference documentReference = fStore.collection("users").document(userId);

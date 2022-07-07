@@ -34,4 +34,16 @@
         <item name="android:clipToPadding">true</item>
     </style>
 
+    <style name="ProfileCardStyle" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ProfileCardStyle_Radius</item>
+    </style>
+
+    <style name="ProfileCardStyle_Radius">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">99dp</item>
+        <item name="cornerSizeTopLeft">99dp</item>
+        <item name="cornerSizeBottomRight">8dp</item>
+        <item name="cornerSizeBottomLeft">99dp</item>
+    </style>
+
 </resources>

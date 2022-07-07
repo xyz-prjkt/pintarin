@@ -3,34 +3,46 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project/pintarin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.154" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_baseline_fullscreen_24.xml" value="0.19322916666666667" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2595" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.1775" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_baseline_list_24.xml" value="0.2595" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.2595" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.154" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_umm.xml" value="0.154" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_xd_simply_banner.xml" value="0.16" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/drawable/labit_logo.xml" value="0.154" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/login_button.xml" value="0.174" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/mnmlist_about.xml" value="0.2595" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/drawable/simply_mask.xml" value="0.1475" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/textinput_bot.xml" value="0.161" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/textinput_mid.xml" value="0.161" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/textinput_top.xml" value="0.161" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/layout-v31/activity_about.xml" value="0.30434782608695654" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/layout-v31/activity_login.xml" value="0.1" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout-v31/activity_splash.xml" value="0.20833333333333334" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/layout/about_dialog.xml" value="0.21784420289855072" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/acrivity_dashboard.xml" value="0.15081521739130435" />
-        <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_about.xml" value="0.22" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_about.xml" value="0.33" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_auth.xml" value="0.14402173913043478" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_course.xml" value="0.1" />
-        <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_dashboard.xml" value="0.33" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_dashboard.xml" value="0.25" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_player.xml" value="0.21851851851851853" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_player.xml" value="0.33" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_user.xml" value="0.2296195652173913" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/layout/content_basicprograming.xml" value="0.21927083333333333" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/content_programing.xml" value="0.1539855072463768" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/content_sponsored.xml" value="0.1539855072463768" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/layout/dashboard_foryou.xml" value="0.1" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/layout/dashboard_main.xml" value="0.20364583333333333" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/tes.xml" value="0.1" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/video_view.xml" value="0.17708333333333334" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.154" />
       </map>
     </option>
   </component>
