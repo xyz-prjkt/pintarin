@@ -5,12 +5,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.FrameLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.MediaItem;
-import com.google.android.exoplayer2.ui.PlayerView;
+import com.google.android.exoplayer2.ui.StyledPlayerView;
 
 import id.xyzprjkt.pintarin.R;
 
@@ -18,7 +17,7 @@ public class SponsoredPlayer extends Activity {
 
     FrameLayout frameLayout;
     ExoPlayer exoPlayer;
-    PlayerView playerView;
+    StyledPlayerView playerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +39,18 @@ public class SponsoredPlayer extends Activity {
         exoPlayer.prepare();
         exoPlayer.setPlayWhenReady(true);
     }
+
+    protected void releasePlayer() {
+        if (exoPlayer != null) {
+            exoPlayer.release();
+            exoPlayer = null;
+        }
+
+    }
+
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        exoPlayer.release();
+    public void onStop() {
+        super.onStop();
+        releasePlayer();
     }
 }
