@@ -7,18 +7,27 @@
           "author": "Kiara Zara",
           "description": "Kalau kalian tertarik dengan bidang IT tapi masih bingung dengan jurusan yang akan kalian pilih, yuk simak video ini. kami akan menjelaskan kepada kalian tentang jurusan informatika yang akan membantu kalian untuk mengembangkan bakat dan minat kalian! simak dengan baik ya supaya tidak sampai salah jurusan!",
           "sources": [
-            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/1_Introducing_IT.mp4"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/programing/1_Introducing_IT.mp4"
           ],
-          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/1_Introducing_IT_thumb.jpg"
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/programing/thumb/1_Introducing_IT_thumb.jpg"
         },
         {
           "title": "Logika Proposisi | Part 1",
           "author": "Rosydan Amru",
           "description": "",
           "sources": [
-            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/2_LogikaProposisi_p1.mp4"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/programing/2_LogikaProposisi_p1.mp4"
           ],
-          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/2_LogikaProposisi_p1_thumb.png"
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/programing/thumb/2_LogikaProposisi_p1_thumb.png"
+        },
+        {
+          "title": "Logika Proposisi | Part 2",
+          "author": "Rosydan Amru",
+          "description": "",
+          "sources": [
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/programing/2_LogikaProposisi_p2.mp4"
+          ],
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/programing/thumb/2_LogikaProposisi_p2_thumb.png"
         }
       ],
       "basicProgramingVideos": [
@@ -27,7 +36,7 @@
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/1.%20Sejarah%20Pemrogaman%20Dasar.mp4?inline=false"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/1.%20Sejarah%20Pemrogaman%20Dasar.mp4"
           ],
           "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Sejarah%20Bahasa%20Pemograman.png"
         },
@@ -36,7 +45,7 @@
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/2.%20Sejarah%20Bahasa%20C.mp4?inline=false"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/2.%20Sejarah%20Bahasa%20C.mp4"
           ],
           "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Sejarah%20Bahasa%20C.png"
         },
@@ -45,7 +54,7 @@
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/3.%20Materi%20if%20else.mp4?inline=false"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/3.%20Materi%20if%20else.mp4"
               ],
           "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Materi%20IF-ELSE.png"
         },
@@ -54,7 +63,7 @@
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/4.%20Praktek%20if%20else.mp4?inline=false"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/4.%20Praktek%20if%20else.mp4"
           ],
           "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Praktek%20IF-ELSE.png"
         },
@@ -63,7 +72,7 @@
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/5.%20Materi%20Looping.mp4?inline=false"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/5.%20Materi%20Looping.mp4"
           ],
           "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Materi%20Looping.png"
         },
@@ -72,7 +81,7 @@
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/6.%20Praktek%20Looping.mp4?inline=false"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/6.%20Praktek%20Looping.mp4"
           ],
           "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Praktek%20Looping.png"
         },
@@ -81,7 +90,7 @@
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/7.%20Materi%20CRUD.mp4?inline=false"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/7.%20Materi%20CRUD.mp4"
           ],
           "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Materi%20CRUD.png"
         },
@@ -90,7 +99,7 @@
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/8.%20Praktek%20CRUD.mp4?inline=false"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/8.%20Praktek%20CRUD.mp4"
           ],
           "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Praktek%20CRUD.png"
         },
@@ -99,7 +108,7 @@
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/9.%20Materi%20Function.mp4?inline=false"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/9.%20Materi%20Function.mp4"
           ],
           "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Materi%20Function.png"
         },
@@ -108,7 +117,7 @@
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/10.%20Praktek%20Function%20.mp4?inline=false"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/10.%20Praktek%20Function%20.mp4"
           ],
           "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Praktek%20Function.png"
         }
