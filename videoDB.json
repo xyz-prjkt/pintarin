@@ -27,90 +27,90 @@
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/courseDB%2FpemdasContent%2F1.%20Sejarah%20Pemrogaman%20Dasar.mp4?alt=media&token=18b5876e-51f1-4575-a5c3-0d3e4bf9c0df"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/1.%20Sejarah%20Pemrogaman%20Dasar.mp4?inline=false"
           ],
-          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/1_Introducing_IT_thumb.jpg"
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Sejarah%20Bahasa%20Pemograman.png"
         },
         {
           "title": "Sejarah Bahasa C",
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/courseDB%2FpemdasContent%2F2.%20Sejarah%20Bahasa%20C.mp4?alt=media&token=09ac4c08-bfb8-48c6-9c0c-5dfa595b9acc"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/2.%20Sejarah%20Bahasa%20C.mp4?inline=false"
           ],
-          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/1_Introducing_IT_thumb.jpg"
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Sejarah%20Bahasa%20C.png"
         },
         {
           "title": "Materi if else",
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/courseDB%2FpemdasContent%2F3.%20Materi%20if%20else.mp4?alt=media&token=68ce5ee5-09fe-4dc4-8f55-a4f7d3bad7f2"
-          ],
-          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/1_Introducing_IT_thumb.jpg"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/3.%20Materi%20if%20else.mp4?inline=false"
+              ],
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Materi%20IF-ELSE.png"
         },
         {
           "title": "Praktek if else",
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/courseDB%2FpemdasContent%2F4.%20PRAKTEK%20IF%20ELSE.mp4?alt=media&token=987d56d9-eb51-40d0-a44a-4ad082d33be0"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/4.%20Praktek%20if%20else.mp4?inline=false"
           ],
-          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/1_Introducing_IT_thumb.jpg"
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Praktek%20IF-ELSE.png"
         },
         {
           "title": "Materi Looping",
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/courseDB%2FpemdasContent%2F5.%20Materi%20Looping20220530-113639-467.mp4?alt=media&token=d5f5f31e-b2b9-4949-a515-3f251ac9b229"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/5.%20Materi%20Looping.mp4?inline=false"
           ],
-          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/1_Introducing_IT_thumb.jpg"
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Materi%20Looping.png"
         },
         {
           "title": "Prakter Looping",
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/courseDB%2FpemdasContent%2F6.%20PRAKTEK%20LOOPING%20.mp4?alt=media&token=46168042-ef91-40b9-aa9b-c34e37e31c57"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/6.%20Praktek%20Looping.mp4?inline=false"
           ],
-          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/1_Introducing_IT_thumb.jpg"
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Praktek%20Looping.png"
         },
         {
           "title": "Materi CRUD",
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/courseDB%2FpemdasContent%2F7.%20Materi%20CRUD.mp4?alt=media&token=190c85e8-0291-4b5e-95c9-93f2f7a1edd7"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/7.%20Materi%20CRUD.mp4?inline=false"
           ],
-          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/1_Introducing_IT_thumb.jpg"
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Materi%20CRUD.png"
         },
         {
           "title": "Praktek CRUD",
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/courseDB%2FpemdasContent%2F8.%20PRAKTEK%20CRUD.mp4?alt=media&token=36202832-9468-4a56-a41d-3cf83e5e1dc0"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/8.%20Praktek%20CRUD.mp4?inline=false"
           ],
-          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/1_Introducing_IT_thumb.jpg"
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Praktek%20CRUD.png"
         },
         {
           "title": "Materi Function",
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/courseDB%2FpemdasContent%2F9.%20MATERI%20FUNCTION.mp4?alt=media&token=88ff0171-8b22-43c7-a95f-f91081e1a81d"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/9.%20Materi%20Function.mp4?inline=false"
           ],
-          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/1_Introducing_IT_thumb.jpg"
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Materi%20Function.png"
         },
         {
           "title": "Praktek Function",
           "author": "Author",
           "description": "Desc",
           "sources": [
-            "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/courseDB%2FpemdasContent%2F10.%20FUNCTION%20PRAKTEK%20.mp4?alt=media&token=e007c639-a13d-4f5a-9291-8e6b4620e170"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/10.%20Praktek%20Function%20.mp4?inline=false"
           ],
-          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/1_Introducing_IT_thumb.jpg"
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/thumb/Praktek%20Function.png"
         }
       ],
       "sponsoredVideos": [
