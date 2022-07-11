@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 
 import com.faltenreich.skeletonlayout.Skeleton;
@@ -27,8 +28,13 @@ import java.util.Objects;
 import javax.annotation.Nullable;
 
 import id.xyzprjkt.pintarin.R;
+import id.xyzprjkt.pintarin.infotechAPI.service.APIService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-public class DashboardActivity extends Activity {
+public class DashboardActivity extends Activity
+        implements Callback<APIService> {
 
     // Firebase Variable
     TextView fullName;
@@ -160,4 +166,14 @@ public class DashboardActivity extends Activity {
         profileRef.getDownloadUrl().addOnSuccessListener(uri -> Picasso.get().load(uri).into(profilePic));
         super.onStart();
     }
+
+    @Override
+    public void onResponse(@NonNull Call<APIService> call, @NonNull Response<APIService> response) {
+    }
+
+    @Override
+    public void onFailure(@NonNull Call<APIService> call, @NonNull Throwable t) {
+
+    }
+
 }

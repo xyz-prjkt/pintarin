@@ -18,6 +18,7 @@ import java.util.Random;
 import id.xyzprjkt.pintarin.R;
 
 public class LoginActivity extends Activity {
+
     EditText mEmail,mPassword;
     Button mLoginBtn;
     TextView welcome, mCreateBtn;

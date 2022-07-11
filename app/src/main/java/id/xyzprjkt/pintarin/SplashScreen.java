@@ -10,6 +10,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import id.xyzprjkt.pintarin.Activity.DashboardActivity;
 import id.xyzprjkt.pintarin.Activity.LoginActivity;
+import id.xyzprjkt.pintarin.infotechAPI.service.APIClient;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashScreen extends Activity {
@@ -21,7 +22,9 @@ public class SplashScreen extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        APIClient apiClient = new APIClient();
         fAuth = FirebaseAuth.getInstance();
+        apiClient.login();
         int delay = 2000;
         new Handler().postDelayed(() -> {
 
