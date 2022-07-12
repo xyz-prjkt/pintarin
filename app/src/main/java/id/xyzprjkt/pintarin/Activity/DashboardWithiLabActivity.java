@@ -4,8 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -14,17 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 
 import com.faltenreich.skeletonlayout.Skeleton;
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
-
-import java.util.Objects;
 
 import javax.annotation.Nullable;
 
@@ -34,21 +23,17 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DashboardActivity extends Activity
+public class DashboardWithiLabActivity extends Activity
         implements Callback<APIService> {
 
-    // Firebase Variable
-    TextView fullName;
-    FirebaseAuth fAuth;
-    FirebaseFirestore fStore;
-    String userId;
-    FirebaseUser user;
-    StorageReference storageReference;
+    // iLab Variable
+    public String accountName;
 
     // Main Variable
+    TextView fullName;
     ImageView profilePic;
-    MaterialButton getstarted;
     CardView courseCard, aboutCard, profileCard;
+    Intent course, about, profile;
     ScrollView rootLayout;
     Snackbar snackBar;
 
@@ -67,37 +52,25 @@ public class DashboardActivity extends Activity
         rootLayout = findViewById(R.id.pintarinRoot);
         snackBar = Snackbar.make(rootLayout,"Press again to exit", Snackbar.LENGTH_SHORT);
 
-        getstarted = findViewById(R.id.getStartedBtn);
         courseCard = findViewById(R.id.pintarinCourse);
+        course = new Intent(this, CourseActivity.class);
+
         aboutCard = findViewById(R.id.pintarinAbout);
+        about = new Intent(this, AboutActivity.class);
+
         profileCard = findViewById(R.id.pintarinProfile);
+        profile = new Intent(this, ProfileActivity.class);
+
         profilePic = findViewById(R.id.pintarinProfileImage);
 
-        courseCard.setOnClickListener(v -> startActivity(new Intent(this, CourseActivity.class)));
-        getstarted.setOnClickListener(v -> startActivity(new Intent(this, CourseActivity.class)));
-        aboutCard.setOnClickListener(v -> startActivity(new Intent(this, AboutActivity.class)));
-        profileCard.setOnClickListener(v -> startActivity(new Intent(this, ProfileActivity.class)));
+        courseCard.setOnClickListener(v -> startActivity(course));
+
+        aboutCard.setOnClickListener(v -> startActivity(about));
+
+        profileCard.setOnClickListener(v -> startActivity(profile));
 
         fullName = findViewById(R.id.profileName);
-        fAuth = FirebaseAuth.getInstance();
-        fStore = FirebaseFirestore.getInstance();
-        storageReference = FirebaseStorage.getInstance().getReference();
-
-        userId = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
-        user = fAuth.getCurrentUser();
-
-        StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
-        profilePic.setVisibility(View.VISIBLE);
-        profileRef.getDownloadUrl().addOnSuccessListener(uri -> Picasso.get().load(uri).into(profilePic));
-
-        DocumentReference documentReference = fStore.collection("users").document(userId);
-        documentReference.addSnapshotListener(this, (documentSnapshot, e) -> {
-            if(Objects.requireNonNull(documentSnapshot).exists()){
-                fullName.setText(getString(R.string.user_name_welcome ) + ", " + documentSnapshot.getString( "fName"));
-            } else {
-                Log.d("tag", "onEvent: Document do not exists");
-            }
-        });
+        fullName.setText(getString(R.string.user_name_welcome ) + ", " + accountName);
 
         /*
             News content ( TO-DO )
@@ -155,9 +128,6 @@ public class DashboardActivity extends Activity
 
     @Override
     protected void onStart() {
-        StorageReference profileRef = storageReference.child("users/"+ Objects.requireNonNull(fAuth.getCurrentUser()).getUid()+"/profile.jpg");
-        profilePic.setVisibility(View.VISIBLE);
-        profileRef.getDownloadUrl().addOnSuccessListener(uri -> Picasso.get().load(uri).into(profilePic));
         super.onStart();
     }
 

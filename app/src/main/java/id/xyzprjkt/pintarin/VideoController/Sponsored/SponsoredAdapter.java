@@ -18,7 +18,6 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import id.xyzprjkt.pintarin.R;
-import id.xyzprjkt.pintarin.VideoController.Programming.ProgramingPlayer;
 
 public class SponsoredAdapter extends RecyclerView.Adapter<SponsoredAdapter.ViewHolder> {
     private final List<SponsoredVideo> allSponsoredVideos;

@@ -49,7 +49,8 @@
                     android:id="@+id/pintarinProfileImage"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                    android:scaleType="centerCrop"/>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
         <!-- Dashboard Content -->
@@ -58,7 +59,10 @@
             android:id="@+id/foryouSkeleton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:maskCornerRadius="24dp">
+            app:maskCornerRadius="24dp"
+            app:maskColor="@color/cardBgColor_monet_4"
+            app:shimmerColor="@color/cardBgColor_monet_2"
+            app:shimmerDurationInMillis="1000">
             <include layout="@layout/dashboard_foryou" />
         </com.faltenreich.skeletonlayout.SkeletonLayout>
     </LinearLayout>

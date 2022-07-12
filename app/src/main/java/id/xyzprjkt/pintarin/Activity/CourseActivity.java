@@ -2,9 +2,8 @@ package id.xyzprjkt.pintarin.Activity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -47,7 +46,7 @@ public class CourseActivity extends Activity {
     List<BasicProgrammingVideo> videoBasicPrograming;
     List<SponsoredVideo> videoSponsored;
 
-    private Skeleton loading;
+    Skeleton loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -152,6 +151,11 @@ public class CourseActivity extends Activity {
             }
         }, error -> Log.d(TAG, "onErrorResponse: " + error.getMessage()));
         requestQueue.add(objectRequest);
-        new Handler(Looper.getMainLooper()).postDelayed(() -> loading.showOriginal(), 2000);
+        loading.showOriginal();
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, DashboardActivity.class));
     }
 }

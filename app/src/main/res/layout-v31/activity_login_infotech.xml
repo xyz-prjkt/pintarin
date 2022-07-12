@@ -25,8 +25,8 @@
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="24dp">
+            android:layout_marginBottom="24dp"
+            android:orientation="vertical">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/welcome"
@@ -34,16 +34,16 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsblack"
                 android:text="Bonjour"
-                android:textSize="45sp"/>
+                android:textSize="45sp" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-8dp"
-                android:text="Sign in with myXD account to find latest course materials"
                 android:fontFamily="@font/poppinsmedium"
-                android:textSize="16sp"/>
+                android:text="Sign in with UMM iLab account to find latest course materials"
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -100,56 +100,6 @@
                 android:text="Sign in"
                 android:textAllCaps="false"
                 android:fontFamily="@font/poppinsblack"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/infotech"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="24dp"
-            android:layout_below="@id/panel"
-            android:layout_alignStart="@id/panel">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Login with "
-                android:fontFamily="@font/poppinsmedium"/>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/infotechAccount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="iLab Account"
-                android:textColor="@android:color/system_accent3_400"
-                android:fontFamily="@font/poppinsmedium"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/infotech"
-            android:layout_alignStart="@id/infotech">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Doesn't have an account?"
-                android:fontFamily="@font/poppinsmedium"/>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/createText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" Sign up here"
-                android:textColor="@android:color/system_accent3_400"
-                android:fontFamily="@font/poppinsmedium"
-                app:layout_constraintEnd_toEndOf="parent"/>
 
         </LinearLayout>
     </RelativeLayout>

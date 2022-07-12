@@ -24,7 +24,6 @@ public class SplashScreen extends Activity {
 
         APIClient apiClient = new APIClient();
         fAuth = FirebaseAuth.getInstance();
-        apiClient.login();
         int delay = 2000;
         new Handler().postDelayed(() -> {
 

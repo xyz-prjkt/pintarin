@@ -1,17 +1,18 @@
 package id.xyzprjkt.pintarin.infotechAPI.model;
 
 public class User {
-    private int id;
+    private boolean loggedWithiLab;
+    private String id;
     private String user_name;
     private String full_name;
-    private int email;
+    private String email;
     private String token;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -31,11 +32,11 @@ public class User {
         this.full_name = full_name;
     }
 
-    public int getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(int email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -47,4 +48,11 @@ public class User {
         this.token = token;
     }
 
+    public boolean getLoggedWithiLab() {
+        return loggedWithiLab;
+    }
+
+    public void setLoggedWithiLab(boolean loggedWithiLab) {
+        this.loggedWithiLab = loggedWithiLab;
+    }
 }

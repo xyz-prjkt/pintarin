@@ -14,6 +14,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import id.xyzprjkt.pintarin.Activity.DashboardWithiLabActivity;
 import id.xyzprjkt.pintarin.infotechAPI.model.User;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,7 +23,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
-public class APIClient extends User{
+public class APIClient extends User {
 
     public APIService apiService = APIClient.getClient().create(APIService.class);
 
@@ -40,16 +41,19 @@ public class APIClient extends User{
         }
         return retrofit;
     }
-    public void login(){
-        Call<Object> postCall = apiService.authLogin("202110370311147", "xyzuan2002");
+    public void login(String username, String password){
+        Call<Object> postCall = apiService.authLogin(username, password);
         postCall.enqueue(new Callback<Object>() {
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) {
                 try {
-                    JSONObject responseObj = new JSONObject(new Gson().toJson(response.body()));
-                    setToken(responseObj.getString("access_token"));
-                    Log.d("infotechAPI", "Response : " + getToken());
-                    fetchInfo(getToken());
+                    if(response.isSuccessful()) {
+                        setLoggedWithiLab(true);
+                        JSONObject responseObj = new JSONObject(new Gson().toJson(response.body()));
+                        setToken(responseObj.getString("access_token"));
+                        Log.d("infotechAPI", "Response : " + getToken());
+                        fetchInfo(getToken());
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -63,8 +67,12 @@ public class APIClient extends User{
     }
 
     public void fetchInfo(String token){
+
+        DashboardWithiLabActivity dash = new DashboardWithiLabActivity();
+
         Thread thread = new Thread(() -> {
             try  {
+
                 URL url = new URL(BASE_URL + "me");
                 HttpURLConnection authPOST = (HttpURLConnection) url.openConnection();
                 authPOST.setRequestMethod("POST");
@@ -83,6 +91,7 @@ public class APIClient extends User{
                 String user_name = jsonObj.getString("user_name");
                 String email = jsonObj.getString("email");
                 String full_name = jsonObj.getString("full_name");
+                dash.accountName = full_name;
                 Log.d("infotechAPI", "Username\t\t: " + user_name);
                 Log.d("infotechAPI", "Email\t\t\t: " + email);
                 Log.d("infotechAPI", "Full Name\t\t: " + full_name);

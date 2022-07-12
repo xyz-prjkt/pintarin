@@ -10,32 +10,28 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.Objects;
 import java.util.Random;
 
 import id.xyzprjkt.pintarin.R;
+import id.xyzprjkt.pintarin.infotechAPI.service.APIClient;
 
-public class LoginActivity extends Activity {
+public class LoginInfotechActivity extends Activity {
 
     EditText mEmail,mPassword;
     Button mLoginBtn;
-    TextView welcome, mCreateBtn, mLoginWithiLab;
-    FirebaseAuth fAuth;
+    TextView welcome;
+
+    APIClient apiClient = new APIClient();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_infotech);
 
         welcome = findViewById(R.id.welcome);
         mEmail = findViewById(R.id.Email);
         mPassword = findViewById(R.id.password);
-        fAuth = FirebaseAuth.getInstance();
         mLoginBtn = findViewById(R.id.loginBtn);
-        mCreateBtn = findViewById(R.id.createText);
-        mLoginWithiLab = findViewById(R.id.infotechAccount);
 
         Random genmsg = new Random();
         final Handler handler = new Handler();
@@ -67,21 +63,15 @@ public class LoginActivity extends Activity {
 
             if(password.length() < 6){
                 mPassword.setError("Password Must be >= 6 Characters");
-                return;
             }
 
-            fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
-                if(task.isSuccessful()){
-                    startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
-                } else {
-                    Toast.makeText(LoginActivity.this, "Error ! " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
-                }
-
-            });
-
+            apiClient.login(email, password);
+            if (apiClient.getLoggedWithiLab()) {
+                startActivity(new Intent(getApplicationContext(),DashboardWithiLabActivity.class));
+            } else {
+                Toast.makeText(LoginInfotechActivity.this, "Error ! ", Toast.LENGTH_SHORT).show();
+            }
         });
-        mCreateBtn.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),RegisterActivity.class)));
-        mLoginWithiLab.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), LoginInfotechActivity.class)));
     }
 
     @Override

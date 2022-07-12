@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cardBgMaskColor_monet_2">@android:color/system_accent1_50</color>
+    <color name="cardBgMaskColor_monet_3">@android:color/system_accent2_50</color>
+    <color name="cardBgMaskColor_monet_4">@android:color/system_accent3_50</color>
+    <color name="cardBgColor_monet_1">@android:color/system_accent3_700</color>
+    <color name="cardBgColor_monet_2">@android:color/system_accent2_700</color>
+    <color name="cardBgColor_monet_3">@android:color/system_accent1_700</color>
+    <color name="cardBgColor_monet_4">@android:color/system_neutral2_800</color>
+</resources>

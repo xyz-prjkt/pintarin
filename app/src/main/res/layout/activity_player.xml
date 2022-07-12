@@ -10,24 +10,28 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="250dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
             android:id="@+id/frameLayout"
             android:layout_margin="16dp"
             android:layout_marginHorizontal="16dp"
-            app:cardBackgroundColor="@android:color/black"
+            android:clipChildren="false"
             app:cardCornerRadius="24dp"
             style="?attr/materialCardViewFilledStyle">
             <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical">
                 <com.google.android.exoplayer2.ui.StyledPlayerView
                     android:id="@+id/player_view"
                     android:focusable="true"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    app:keep_content_on_player_reset="true"
+                    app:resize_mode="fixed_width"
+                    app:show_buffering="when_playing"
+                    app:auto_show="false" />
             </FrameLayout>
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.card.MaterialCardView
@@ -41,20 +45,105 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:orientation="vertical">
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/videoTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="21sp"
-                    android:textColor="?android:attr/textColorPrimary" />
-                <TextView
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="-8dp"
+                    android:textSize="19sp"
+                    android:textColor="?android:attr/textColorPrimary"
+                    app:fontFamily="@font/poppinsmedium"/>
+                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/videoDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:justificationMode="inter_word"
-                    app:layout_constraintTop_toBottomOf="@id/videoTitle" />
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="14sp"
+                    app:fontFamily="@font/poppinsregular" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/videoAuthorContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginHorizontal="16dp"
+            android:visibility="gone"
+            app:cardCornerRadius="24dp"
+            style="?attr/materialCardViewFilledStyle">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/pintarinProfileCard"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        app:cardBackgroundColor="@android:color/system_accent1_100"
+                        app:cardCornerRadius="99dp"
+                        app:strokeWidth="0dp">
+                        <ImageView
+                            android:id="@+id/videoAuthorPic"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:src="@drawable/about_zara"
+                            android:scaleType="centerCrop"/>
+                    </com.google.android.material.card.MaterialCardView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/videoAuthorName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:layout_marginBottom="-6dp"
+                            android:fontFamily="@font/poppinsmedium"
+                            android:text="Author"
+                            android:textSize="17sp"
+                            android:textColor="?android:attr/textColorPrimary"/>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/videoAuthorMajor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:fontFamily="@font/poppinsregular"
+                            android:text="Informatics Engineering"
+                            android:textSize="14sp"
+                            android:textColor="?android:attr/textColorSecondary"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.faltenreich.skeletonlayout.SkeletonLayout
+            android:id="@+id/skeletonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            app:maskCornerRadius="24dp"
+            app:maskColor="@color/cardBgColor_monet_4"
+            app:shimmerColor="@color/cardBgColor_monet_2"
+            app:shimmerDurationInMillis="1000">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!-- Course Content -->
+                <include layout="@layout/content_programing" />
+                <include layout="@layout/content_basicprograming" />
+                <include layout="@layout/content_sponsored" />
+            </LinearLayout>
+        </com.faltenreich.skeletonlayout.SkeletonLayout>
     </LinearLayout>
 </ScrollView>

@@ -19,9 +19,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.DashboardActivity" />
+        <activity android:name=".Activity.DashboardWithiLabActivity" />
         <activity android:name=".Activity.AboutActivity" />
         <activity android:name=".Activity.CourseActivity" />
         <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.LoginInfotechActivity" />
         <activity android:name=".Activity.RegisterActivity" />
         <activity android:name=".Activity.ProfileActivity" />
         <activity

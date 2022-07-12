@@ -47,7 +47,6 @@ public class ProgrammingAdapter extends RecyclerView.Adapter<ProgrammingAdapter.
             Intent i = new Intent(context, ProgramingPlayer.class);
             i.putExtras(b);
             v.getContext().startActivity(i);
-
         });
     }
 
