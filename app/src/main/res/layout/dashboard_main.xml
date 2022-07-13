@@ -94,14 +94,15 @@
                     android:src="@drawable/ic_baseline_menu_book_24"
                     android:tint="@android:color/system_accent1_800"
                     tools:ignore="UseAppTint" />
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:fontFamily="@font/poppinsblack"
                     android:text="Course\nLibrary"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="?android:attr/textColorPrimary"/>
             </FrameLayout>
         </androidx.cardview.widget.CardView>
 
@@ -130,14 +131,15 @@
                     android:src="@drawable/ic_baseline_info_24"
                     android:tint="@android:color/system_neutral2_900"
                     tools:ignore="UseAppTint" />
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:fontFamily="@font/poppinsblack"
                     android:text="About\nApp"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="?android:attr/textColorPrimary"/>
             </FrameLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>

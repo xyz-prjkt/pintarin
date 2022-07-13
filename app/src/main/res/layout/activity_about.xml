@@ -46,6 +46,7 @@
                 android:lineSpacingMultiplier="0.85"
                 android:text="pintar\nin"
                 android:textSize="50sp"
+                android:textColor="?android:attr/textColorPrimary"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -60,7 +61,7 @@
                 android:justificationMode="inter_word"
                 tools:ignore="HardcodedText" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -69,6 +70,7 @@
                 android:lineSpacingMultiplier="0.85"
                 android:text="Made with &lt;3 by"
                 android:textSize="14sp"
+                android:textColor="?android:attr/textColorPrimary"
                 android:justificationMode="inter_word"
                 tools:ignore="HardcodedText" />
 
@@ -133,7 +135,7 @@
 
             </LinearLayout>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -142,6 +144,7 @@
                 android:lineSpacingMultiplier="0.85"
                 android:text="Supported by :"
                 android:textSize="14sp"
+                android:textColor="?android:attr/textColorPrimary"
                 android:justificationMode="inter_word"
                 tools:ignore="HardcodedText" />
 

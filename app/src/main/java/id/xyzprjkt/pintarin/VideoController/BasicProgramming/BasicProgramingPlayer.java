@@ -10,6 +10,7 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,7 +33,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import id.xyzprjkt.pintarin.Activity.CourseActivity;
 import id.xyzprjkt.pintarin.R;
 
 public class BasicProgramingPlayer extends Activity {
@@ -44,7 +44,6 @@ public class BasicProgramingPlayer extends Activity {
     TextView title, desc, author, authorMajor;
     ImageView authorPic;
 
-    TextView programingCategory;
     List<BasicProgrammingVideo> videoBasicPrograming;
     BasicProgrammingAdapter adapterBasicPrograming;
     RecyclerView sponsored;
@@ -71,16 +70,23 @@ public class BasicProgramingPlayer extends Activity {
         desc.setText(v.getDescription());
         author.setText(v.getAuthor());
 
-        if(v.getAuthor().equals("Kiara Zara") || v.getAuthor().equals("Rosydan Amru")) {
+        if(v.getAuthor().equals("Kiara Zara") || v.getAuthor().equals("Rosydan Amru") || v.getAuthor().equals("xyzuan")) {
             authorContainer.setVisibility(View.VISIBLE);
             if (v.getAuthor().equals("Kiara Zara") || v.getAuthor().equals("Rosydan Amru")) {
                 authorMajor.setText("Speaker");
+            } else if (v.getAuthor().equals("xyzuan")){
+                authorMajor.setText("xyzscape Developer");
             }
-
-            if (v.getAuthor().equals("Kiara Zara")) {
-                authorPic.setImageResource(R.drawable.about_zara);
-            } else if (v.getAuthor().equals("Rosydan Amru")) {
-                authorPic.setImageResource(R.drawable.about_rosydan);
+            switch (v.getAuthor()) {
+                case "Kiara Zara":
+                    authorPic.setImageResource(R.drawable.about_zara);
+                    break;
+                case "Rosydan Amru":
+                    authorPic.setImageResource(R.drawable.about_rosydan);
+                    break;
+                case "xyzuan":
+                    authorPic.setImageResource(R.drawable.about_xyzuan);
+                    break;
             }
         }
 
@@ -91,22 +97,26 @@ public class BasicProgramingPlayer extends Activity {
         exoPlayer.addMediaItem(mediaItem);
         exoPlayer.prepare();
         exoPlayer.setPlayWhenReady(true);
-
         getRecommended();
     }
 
     private void getRecommended() {
+        TextView basicProgramingCategory;
+        LinearLayout includedBasicPrograming;
 
         loading = findViewById(R.id.skeletonLayout);
-        programingCategory = findViewById(R.id.programingCategory);
+        basicProgramingCategory = findViewById(R.id.basicProgramingCategory);
         sponsored = findViewById(R.id.courseBasicPrograming);
+        includedBasicPrograming = findViewById(R.id.includedBasicPrograming);
 
+        includedBasicPrograming.setVisibility(View.VISIBLE);
         videoBasicPrograming = new ArrayList<>();
         adapterBasicPrograming = new BasicProgrammingAdapter(this, videoBasicPrograming);
         sponsored.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL , false));
         sponsored.setAdapter(adapterBasicPrograming);
-        programingCategory.setText("Recommended video");
-        programingCategory.setVisibility(View.VISIBLE);
+        basicProgramingCategory.setText("Recommended video");
+        basicProgramingCategory.setPadding(24,0,0,0);
+        basicProgramingCategory.setVisibility(View.VISIBLE);
         loading.showSkeleton();
         getJsonData();
     }
@@ -142,21 +152,39 @@ public class BasicProgramingPlayer extends Activity {
         new Handler(Looper.getMainLooper()).postDelayed(() -> loading.showOriginal(), 2000);
     }
 
-    protected void releasePlayer() {
-        if (exoPlayer != null) {
-            exoPlayer.release();
-            exoPlayer = null;
-        }
-    }
-
     @Override
     public void onStop() {
+        if (exoPlayer != null) {
+            exoPlayer.setPlayWhenReady(false);
+            exoPlayer.stop();
+            exoPlayer.seekTo(0);
+        }
         super.onStop();
-        releasePlayer();
     }
 
     @Override
-    public void onBackPressed() {
-        startActivity(new Intent(this, CourseActivity.class));
+    protected void onDestroy() {
+        if (exoPlayer != null) {
+            exoPlayer.setPlayWhenReady(false);
+            exoPlayer.stop();
+            exoPlayer.seekTo(0);
+        }
+        super.onDestroy();
+    }
+
+    @Override
+    public void onPause() {
+        if (exoPlayer != null) {
+            exoPlayer.setPlayWhenReady(false);
+        }
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        if (exoPlayer != null) {
+            exoPlayer.setPlayWhenReady(true);
+        }
+        super.onResume();
     }
 }

@@ -68,7 +68,6 @@ public class BasicProgrammingAdapter extends RecyclerView.Adapter<BasicProgrammi
             title = itemView.findViewById(R.id.videoTitle);
             author = itemView.findViewById(R.id.videoAuthor);
             vv = itemView;
-
         }
     }
 }

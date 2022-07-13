@@ -62,12 +62,10 @@ public class ProgrammingAdapter extends RecyclerView.Adapter<ProgrammingAdapter.
         View vv;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
             videoImage = itemView.findViewById(R.id.videoThumbnail);
             title = itemView.findViewById(R.id.videoTitle);
             author = itemView.findViewById(R.id.videoAuthor);
             vv = itemView;
-
         }
     }
 }

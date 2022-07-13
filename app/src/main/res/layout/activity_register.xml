@@ -34,7 +34,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsblack"
                 android:text="Register"
-                android:textSize="45sp" />
+                android:textSize="45sp"
+                android:textColor="?android:attr/textColorPrimary"/>
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView2"

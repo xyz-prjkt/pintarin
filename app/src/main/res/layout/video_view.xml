@@ -5,19 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300dp"
     android:layout_height="wrap_content">
-
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         style="?attr/materialCardViewFilledStyle"
         app:cardCornerRadius="24dp">
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp">
-
             <ImageView
                 android:id="@+id/videoThumbnail"
                 android:layout_width="0dp"
@@ -28,8 +25,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@null"
                 tools:ignore="ContentDescription" />
-
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/videoTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -43,8 +39,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/videoThumbnail" />
-
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/videoAuthor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,8 +49,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/videoTitle" />
-
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,8 +58,7 @@
                 app:layout_constraintStart_toEndOf="@+id/videoAuthor"
                 app:layout_constraintTop_toBottomOf="@+id/videoTitle"
                 app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

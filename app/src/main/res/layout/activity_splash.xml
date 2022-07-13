@@ -27,7 +27,8 @@
                     android:fontFamily="@font/poppinsblack"
                     android:lineSpacingMultiplier="0.85"
                     android:text="pintar\nin"
-                    android:textSize="90sp" />
+                    android:textSize="90sp"
+                    android:textColor="?android:attr/textColorPrimary" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

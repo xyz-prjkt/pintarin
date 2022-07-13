@@ -2,7 +2,6 @@ package id.xyzprjkt.pintarin.Activity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -152,10 +151,5 @@ public class CourseActivity extends Activity {
         }, error -> Log.d(TAG, "onErrorResponse: " + error.getMessage()));
         requestQueue.add(objectRequest);
         loading.showOriginal();
-    }
-
-    @Override
-    public void onBackPressed() {
-        startActivity(new Intent(this, DashboardActivity.class));
     }
 }

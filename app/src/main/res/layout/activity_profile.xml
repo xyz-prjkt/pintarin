@@ -29,7 +29,8 @@
                         android:layout_marginTop="50dp"
                         android:text="myXD"
                         android:fontFamily="@font/poppinsblack"
-                        android:textSize="24sp"/>
+                        android:textSize="24sp"
+                        android:textColor="?android:attr/textColorPrimary"/>
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/profileName"
                         android:layout_width="wrap_content"

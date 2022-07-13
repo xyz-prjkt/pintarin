@@ -47,7 +47,6 @@ public class SponsoredAdapter extends RecyclerView.Adapter<SponsoredAdapter.View
             Intent i = new Intent(context, SponsoredPlayer.class);
             i.putExtras(b);
             v.getContext().startActivity(i);
-
         });
     }
 
@@ -68,7 +67,6 @@ public class SponsoredAdapter extends RecyclerView.Adapter<SponsoredAdapter.View
             title = itemView.findViewById(R.id.videoTitle);
             author = itemView.findViewById(R.id.videoAuthor);
             vv = itemView;
-
         }
     }
 }
