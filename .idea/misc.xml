@@ -11,7 +11,8 @@
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.2595" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.154" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_pi.xml" value="0.208" />
-        <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_pintarin_foreground.xml" value="0.208" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_pintarin_foreground.xml" value="0.1" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_pintarin_monochrome.xml" value="0.1" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_umm.xml" value="0.154" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_xd_simply_banner.xml" value="0.16" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/labit_logo.xml" value="0.154" />
@@ -46,7 +47,12 @@
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/tes.xml" value="0.1" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/video_view.xml" value="0.17708333333333334" />
         <entry key="..\:/Project/pintarin/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.154" />
-        <entry key="..\:/Project/pintarin/app/src/main/res/mipmap-anydpi-v26/ic_pintarin.xml" value="0.208" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/mipmap-anydpi-v26/ic_pintarin.xml" value="0.1" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/mipmap-anydpi-v26/ic_pintarin_round.xml" value="0.1" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/mipmap-anydpi-v31/ic_pintarin.xml" value="0.1" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/mipmap-anydpi/ic_pintarin.xml" value="0.1" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/mipmap-anydpi/ic_pintarin_round.xml" value="0.1" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/mipmap/ic_pintarin.xml" value="0.1435" />
       </map>
     </option>
   </component>

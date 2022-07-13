@@ -3,6 +3,8 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="ic_pintarin_foreground">#ffffff</color>
+    <color name="ic_pintarin_background">#333C4B</color>
     <color name="cardBgColor_monet_1">@android:color/system_accent3_50</color>
     <color name="cardBgColor_monet_2">@android:color/system_accent2_50</color>
     <color name="cardBgColor_monet_3">@android:color/system_accent1_50</color>
