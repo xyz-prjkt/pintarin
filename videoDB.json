@@ -51,8 +51,8 @@
       "basicProgramingVideos": [
         {
           "title": "Sejarah Pemrograman Dasar",
-          "author": "Author",
-          "description": "Desc",
+          "author": "Ahya Nika Salsabila",
+          "description": "Pada video ini kita akam mengenal lebih dalam mengenai sejarah terbentuknya bahasa pemograman sebelum masuk kedunia percodingan. Tak kenal maka tak sayang, mari kita bersama-sama memahami bahasa pemrograman mulai dari sejarahnya.",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/1.%20Sejarah%20Pemrogaman%20Dasar.mp4"
           ],
@@ -60,8 +60,8 @@
         },
         {
           "title": "Sejarah Bahasa C",
-          "author": "Author",
-          "description": "Desc",
+          "author": "Ahya Nika Salsabila",
+          "description": "Setelah mengetahui sejarah bahasa pemrograman, disini kalian akan mengenal lebih lanjut sejarah dari bahasa C. Disini kita akan belajar asal usul terbentuknya bahasa C serta siapa-siapa saja yang telah berkontribusi banyak terhadap berkembangnya bahasa C.",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/2.%20Sejarah%20Bahasa%20C.mp4"
           ],
@@ -69,8 +69,8 @@
         },
         {
           "title": "Materi if else",
-          "author": "Author",
-          "description": "Desc",
+          "author": "Ahya Nika Salsabila",
+          "description": "Di dalam bahasa C terdapat suatu kondisi yang dinamakan dengan If-else. Dalam video kali ini, kalian akan diberikan pemahaman secara simple mengenai bagaimana cara kerja dari kondisi if-else ini.",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/3.%20Materi%20if%20else.mp4"
               ],
@@ -78,8 +78,8 @@
         },
         {
           "title": "Praktek if else",
-          "author": "Author",
-          "description": "Desc",
+          "author": "Ahya Nika Salsabila",
+          "description": "Setelah memahami bagaimana cara kerja dari kondisi If-else, selanjutnya adalah kita akan belajar cara coding menggunakan kondisi If-else. Disini kalian akan diperlihatkan contoh codingan dengan penggunaan kondisi If-else.",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/4.%20Praktek%20if%20else.mp4"
           ],
@@ -87,8 +87,8 @@
         },
         {
           "title": "Materi Looping",
-          "author": "Author",
-          "description": "Desc",
+          "author": "Ahya Nika Salsabila",
+          "description": "Selain kondisi If-else, di dalam bahasa C juga terdapat kondisi perulangan yang dinamakan dengan Looping. Pada materi kali ini, kita akan bersama-sama belajar memahami bagaimana cara kerja dari Looping serta apa saja komponen-komponen yang penting dan harus diketahui sebelum menggunakan kondisi ini.",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/5.%20Materi%20Looping.mp4"
           ],
@@ -96,8 +96,8 @@
         },
         {
           "title": "Prakter Looping",
-          "author": "Author",
-          "description": "Desc",
+          "author": "Ahya Nika Salsabila",
+          "description": "Pada video praktek Looping, kita akan bersama-sama menyimak bagaimana cara penggunaan kondisi perulangan Looping pada bahasa C dalam codingan.",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/6.%20Praktek%20Looping.mp4"
           ],
@@ -105,8 +105,8 @@
         },
         {
           "title": "Materi CRUD",
-          "author": "Author",
-          "description": "Desc",
+          "author": "Ahya Nika Salsabila",
+          "description": "Dalam bahasa pemrograman tak terkecuali bahasa C, ada salah satu program yang sangat penting dan sering digunakan dalam dunia percodingan, yaitu CRUD (Create, Read, Update, dan Delete). Program ini sangat penting untuk dipelajari apalagi bagi calon-calon programmer handal. Maka dari itu, di video kali ini kalian akan menyimak materi mengenai CRUD secara singkat dan simple.",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/7.%20Materi%20CRUD.mp4"
           ],
@@ -114,8 +114,8 @@
         },
         {
           "title": "Praktek CRUD",
-          "author": "Author",
-          "description": "Desc",
+          "author": "Ahya Nika Salsabila",
+          "description": "Setelah memahami apa itu CRUD melalui video materi sebelumnya, sekarang kita masuk ke bagian praktek. Untuk praktek kali ini, mari kita bersama-sama menyimak sekaligus mencoba untuk membuat program CRUD.",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/8.%20Praktek%20CRUD.mp4"
           ],
@@ -123,8 +123,8 @@
         },
         {
           "title": "Materi Function",
-          "author": "Author",
-          "description": "Desc",
+          "author": "Ahya Nika Salsabila",
+          "description": "Divideo ini, kalian akan diminta untuk menyimak bagaimana cara menggunakan function dalam program berbahasa C.",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/9.%20Materi%20Function.mp4"
           ],
@@ -132,8 +132,8 @@
         },
         {
           "title": "Praktek Function",
-          "author": "Author",
-          "description": "Desc",
+          "author": "Ahya Nika Salsabila",
+          "description": "Pada video pembelajaran function, kalian akan diberi wawasan mengenai apa itu function, apa saja yanh termasuk sebagai function, dan bagaimana cara kerja dari function itu sendiri.",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/basicPrograming/10.%20Praktek%20Function%20.mp4"
           ],
