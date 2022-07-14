@@ -142,13 +142,13 @@
       ],
       "sponsoredVideos": [
         {
-          "title": "⏁⊑⟒ ⟟⋏⎐⏃⌇⟟⍜⋏ ⍜⎎ ⌇⟟⋔⌿⌰⊬",
+          "title": "xdroidUI 3.0",
           "author": "xyzuan",
           "description": "No one can escape from S I M P L Y",
           "sources": [
-            "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/courseDB%2FsponsoredContent%2FSimply%20Invasion.mp4?alt=media&token=92311c30-50a7-42e7-aa17-da18feb8e90a"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/sponsored/Simply%20Invasion.mp4"
           ],
-          "thumb": "https://firebasestorage.googleapis.com/v0/b/pintarin-labit2022.appspot.com/o/courseDB%2FsponsoredContent%2FSimply%20Invasion.png?alt=media&token=a8e8bf36-ccdf-4208-9167-90af0065751c"
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/sponsored/thumb/Simply%20Invasion.png"
         },
         {
           "title": "Hi, xdroidOSS 2.0",
@@ -160,13 +160,40 @@
           "thumb": "https://raw.githubusercontent.com/xyz-prjkt/pintar.in_db/main/anak.webp"
         },
         {
-          "title": "Review xdroid 1.3 OBT di Xiaomi Redmi Note 7",
-          "author": "xdroidOSS",
-          "description": "Review update custom rom xdroid 1.3 OBT edisi Dirgahayu Republik Indonesia ke 76 di Xiaomi Redmi Note 7",
+          "title": "Cara Compile Kernel dengan Clang di Termux",
+          "author": "xyzuan",
+          "description": "Kita disini akan mengcompile kernel menggunakan sebuah ponsel android dibantu dengan aplikasi Termux dan sebuah server gratisan. Kita juga mengcompile kernel tersebut menggunakan compiler clang terbaru yaitu clang 13.",
           "sources": [
-            "https://github.com/xyz-prjkt/pintar.in_db/blob/main/Review%20xdroid%201.3%20OBT%20di%20Xiaomi%20Redmi%20Note%207.mkv?raw=true"
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/sponsored/Cara%20Compile%20Kernel%C2%A0dengan%20Clang%20di%20Termux.mp4"
           ],
-          "thumb": "https://raw.githubusercontent.com/xyz-prjkt/pintar.in_db/main/sddefault.webp"
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/sponsored/thumb/Cara%20Compile%20Kernel%C2%A0dengan%20Clang%20di%20Termux.jpg"
+        },
+        {
+          "title": "Cara Buat Custom Clang Dengan DroneCI",
+          "author": "xyzuan",
+          "description": "Kita disini akan mengcompile source LLVM, yaitu Toolchain Clang menggunakan CI gratis yaitu drone.cloud.io",
+          "sources": [
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/sponsored/Cara%20Buat%20Custom%20Clang%20Gratis%20Dengan%20DroneCI.mp4"
+          ],
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/sponsored/thumb/Cara%20Buat%20Custom%20Clang%20Dengan%20DroneCI.jpg"
+        },
+        {
+          "title": "Cara Install Ubuntu di Android",
+          "author": "xyzuan",
+          "description": "Kita akan menginstall Ubuntu di Android dengan menggunakan aplikasi Termux yang bisa di download gratis di Play Store.",
+          "sources": [
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/sponsored/Cara%20Install%20Ubuntu%20di%20Android.mp4"
+          ],
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/sponsored/thumb/Cara%20Install%20Ubuntu%20di%20Android.jpg"
+        },
+        {
+          "title": "Cara nyomot commit di github",
+          "author": "xyzuan",
+          "description": "Wokehh.. kita akan belajar menggunakan program git, dan menggunakan salah satu fungsi dari git tersebut yaitu Cherry pick.",
+          "sources": [
+            "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/sponsored/Cara%20nyomot%20commit%20di%20github.mp4"
+          ],
+          "thumb": "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/sponsored/thumb/Cara%20nyomot%20commit%20di%20github.jpg"
         }
       ]
     }
