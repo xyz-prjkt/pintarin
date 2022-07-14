@@ -32,7 +32,8 @@
         {
           "title": "Logika Proposisi | Part 1",
           "author": "Rosydan Amru",
-          "description": "",
+          "description": "Di dunia informatika, pemrograman merupakan hal yang sering kita temukan. Di dalam pemrograman itu, perlu ada yang nammanya logika. Logika ini lah yang akan mengasah kemampuan dan pikiran kita dalam mengerjakan suatu Langkah dalam pemrograman. 
+Salah satu logika yang dipelajari adalah logika proposisi. Logika proposisi merupakan proses berfikir manusia untuk menentukan nilai benar atau salah, tetapi tidak keduanya. Logika proposisi mempunyai berbagai macam, yaitu negasi, konjungsi, disjungsi, eksklusif-or, implikasi, dan biimplikasi.",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/programing/2_LogikaProposisi_p1.mp4"
           ],
@@ -41,7 +42,7 @@
         {
           "title": "Logika Proposisi | Part 2",
           "author": "Rosydan Amru",
-          "description": "",
+          "description": "Pada video kali ini, kita membahas lebih dalam dari macam macam logika proposisi. Setiap logika proposisi memiliki aturan yang berbeda beda dan simbol yang berbeda juga, tetapi nilainya tetap berkeluaran benar atau salah. Untuk mengetahui aturan dari macam macam logika proposisi, mari simak video kali ini.",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/programing/2_LogikaProposisi_p2.mp4"
           ],
