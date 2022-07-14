@@ -70,9 +70,9 @@ public class BasicProgramingPlayer extends Activity {
         desc.setText(v.getDescription());
         author.setText(v.getAuthor());
 
-        if(v.getAuthor().equals("Kiara Zara") || v.getAuthor().equals("Rosydan Amru") || v.getAuthor().equals("xyzuan")) {
+        if(v.getAuthor().equals("Kiara Zara") || v.getAuthor().equals("Rosydan Amru") || v.getAuthor().equals("xyzuan") || v.getAuthor().equals("Ahya Nika Salsabila")) {
             authorContainer.setVisibility(View.VISIBLE);
-            if (v.getAuthor().equals("Kiara Zara") || v.getAuthor().equals("Rosydan Amru")) {
+            if (v.getAuthor().equals("Kiara Zara") || v.getAuthor().equals("Rosydan Amru") || v.getAuthor().equals("Ahya Nika Salsabila")) {
                 authorMajor.setText("Speaker");
             } else if (v.getAuthor().equals("xyzuan")){
                 authorMajor.setText("xyzscape Developer");
@@ -87,6 +87,8 @@ public class BasicProgramingPlayer extends Activity {
                 case "xyzuan":
                     authorPic.setImageResource(R.drawable.about_xyzuan);
                     break;
+                case "Ahya Nika Salsabila":
+                    authorPic.setImageResource(R.drawable.about_ahya);
             }
         }
 
@@ -161,6 +163,7 @@ public class BasicProgramingPlayer extends Activity {
         }
         super.onStop();
     }
+
 
     @Override
     protected void onDestroy() {
