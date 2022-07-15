@@ -35,19 +35,12 @@
                         android:id="@+id/profileName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/pintarin_header_title"
-                        android:layout_alignStart="@id/pintarin_header_title"
                         android:layout_marginBottom="8dp"
                         android:text="Your account information"
                         android:fontFamily="@font/poppinsmedium"
                         android:textSize="18sp"/>
             </LinearLayout>
 
-            <com.faltenreich.skeletonlayout.SkeletonLayout
-                android:id="@+id/skeletonLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:maskCornerRadius="99dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -55,40 +48,48 @@
                 android:orientation="horizontal"
                 android:gravity="center">
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/pintarinProfileCard"
+                    android:id="@+id/editProfilePic"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_gravity="center_vertical"
                     app:cardBackgroundColor="@android:color/system_accent1_100"
                     app:cardCornerRadius="99dp"
                     app:strokeWidth="0dp">
-
                     <ImageView
                         android:id="@+id/profileImageView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleType="centerCrop"/>
+                        android:scaleType="centerCrop"
+                        tools:ignore="ContentDescription" />
                 </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/editProfilePic"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/verifiedBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="-50dp"
                     android:layout_gravity="bottom|end"
-                    app:cardBackgroundColor="@android:color/system_accent3_50"
+                    android:visibility="gone"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@android:color/transparent"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="0dp">
+
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:tint="@android:color/system_accent3_50"
+                        android:src="@drawable/ic_verified_bg"
+                        tools:ignore="ContentDescription,UseAppTint" />
+                    <ImageView
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_baseline_edit_24"
-                        android:tint="@android:color/system_accent1_800"
-                        tools:ignore="UseAppTint" />
-                    </androidx.cardview.widget.CardView>
+                        android:src="@drawable/ic_round_check_24"
+                        android:tint="@android:color/system_accent3_600"
+                        tools:ignore="ContentDescription,UseAppTint" />
+                    </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
-            </com.faltenreich.skeletonlayout.SkeletonLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -96,11 +97,64 @@
                 android:layout_marginVertical="8dp"
                 android:orientation="vertical">
 
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/verifiedCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="#FFBEBE"
+                    app:cardCornerRadius="24dp"
+                    style="@style/Widget.Material3.CardView.Filled">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:tint="#9C3838"
+                                android:src="@drawable/ic_baseline_info_24"
+                                tools:ignore="UseAppTint" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingStart="14dp">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/verifiedText"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textColor="#9C3838"
+                                android:text="This account wasn't verified"
+                                app:fontFamily="@font/poppinsmedium"/>
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/verifiedTextSummary"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="-4dp"
+                                android:textColor="#BC5F5F"
+                                android:text="Verify your account email now"
+                                app:fontFamily="@font/poppinsmedium"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:boxCornerRadiusTopStart="24dp"
                     app:boxCornerRadiusTopEnd="24dp"
+                    app:boxCornerRadiusBottomStart="5dp"
+                    app:boxCornerRadiusBottomEnd="5dp"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp"
                     style="@style/Widget.Material3.TextInputLayout.FilledBox">
@@ -126,6 +180,10 @@
                     android:layout_height="wrap_content"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp"
+                    app:boxCornerRadiusTopStart="5dp"
+                    app:boxCornerRadiusTopEnd="5dp"
+                    app:boxCornerRadiusBottomStart="5dp"
+                    app:boxCornerRadiusBottomEnd="5dp"
                     style="@style/Widget.Material3.TextInputLayout.FilledBox">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/profileTelp"
@@ -136,7 +194,7 @@
                         android:hint="Phone Number"
                         android:textSize="14sp"
                         android:fontFamily="@font/poppinsmedium"
-                        android:inputType="textPersonName"
+                        android:inputType="phone"
                         app:boxStrokeWidth="0dp"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -179,6 +237,8 @@
                     android:layout_height="wrap_content"
                     app:boxCornerRadiusTopStart="24dp"
                     app:boxCornerRadiusTopEnd="24dp"
+                    app:boxCornerRadiusBottomStart="5dp"
+                    app:boxCornerRadiusBottomEnd="5dp"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp"
                     style="@style/Widget.Material3.TextInputLayout.FilledBox">
@@ -191,7 +251,6 @@
                         android:hint="University"
                         android:textSize="14sp"
                         android:fontFamily="@font/poppinsmedium"
-                        android:inputType="textPersonName"
                         app:boxStrokeWidth="0dp"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -202,6 +261,8 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:boxCornerRadiusTopStart="5dp"
+                    app:boxCornerRadiusTopEnd="5dp"
                     app:boxCornerRadiusBottomStart="24dp"
                     app:boxCornerRadiusBottomEnd="24dp"
                     app:boxStrokeWidth="0dp"
@@ -215,8 +276,7 @@
                         android:ems="10"
                         android:textSize="14sp"
                         android:fontFamily="@font/poppinsmedium"
-                        android:hint="Department"
-                        android:inputType="textEmailAddress" />
+                        android:hint="Department" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 

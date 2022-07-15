@@ -13,6 +13,7 @@
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_pi.xml" value="0.208" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_pintarin_foreground.xml" value="0.1" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_pintarin_monochrome.xml" value="0.1" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_round_check_24.xml" value="0.1525" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_umm.xml" value="0.154" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/ic_xd_simply_banner.xml" value="0.16" />
         <entry key="..\:/Project/pintarin/app/src/main/res/drawable/labit_logo.xml" value="0.154" />
@@ -35,7 +36,7 @@
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_player.xml" value="0.22" />
-        <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_profile.xml" value="0.25" />
+        <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_profile.xml" value="0.4675090252707581" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_splash.xml" value="0.33" />
         <entry key="..\:/Project/pintarin/app/src/main/res/layout/activity_user.xml" value="0.2296195652173913" />

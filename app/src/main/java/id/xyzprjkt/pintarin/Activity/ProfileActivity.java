@@ -14,7 +14,8 @@ import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 
-import com.faltenreich.skeletonlayout.Skeleton;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -35,8 +36,6 @@ public class ProfileActivity extends Activity {
     ImageView profileImageView;
     CardView profilePicCard, editProfilePicBtn;
 
-    Skeleton loading;
-
     // Account Information Variable
     EditText profileFullName,
              profilePhone,
@@ -44,6 +43,7 @@ public class ProfileActivity extends Activity {
              profileUniv,
              profileDepart;
     Button saveBtn;
+    MaterialCardView verifiedCard, verifiedBadge;
 
     // Google Firebase
     FirebaseAuth fAuth;
@@ -83,6 +83,8 @@ public class ProfileActivity extends Activity {
         profileFullName = findViewById(R.id.profileFullName);
         profilePhone = findViewById(R.id.profileTelp);
         profileEmail = findViewById(R.id.profileEmailAddress);
+        verifiedBadge = findViewById(R.id.verifiedBadge);
+        verifiedCard = findViewById(R.id.verifiedCard);
 
         // Education informations ID
         profileUniv = findViewById(R.id.profileUniversity);
@@ -90,13 +92,9 @@ public class ProfileActivity extends Activity {
 
         saveBtn = findViewById(R.id.saveProfileInfo);
 
-        loading = findViewById(R.id.skeletonLayout);
-        loading.showSkeleton();
-
         // Fetch User Profile Pic from Firebase Storage
         StorageReference profileRef = storageReference.child("users/"+ Objects.requireNonNull(fAuth.getCurrentUser()).getUid()+"/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(uri -> Picasso.get().load(uri).into(profileImageView));
-        loading.showOriginal();
 
         // Fetch User information from Firebase Storage
         DocumentReference documentReference = fStore.collection("users").document(userId);
@@ -139,10 +137,37 @@ public class ProfileActivity extends Activity {
 
                 docRef.update(edited).addOnSuccessListener(aVoid1 -> {
                     startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
+                    user.reload();
                     finish();
                 });
             }).addOnFailureListener(e -> Toast.makeText(ProfileActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show());
         });
+
+        verifiedCard.setOnClickListener(v -> user.sendEmailVerification()
+                .addOnCompleteListener(this, (OnCompleteListener) task -> {
+                    if (!user.isEmailVerified()){
+                        if (task.isSuccessful()) {
+                            Toast.makeText(ProfileActivity.this,
+                                    "Verification email sent to " + user.getEmail(),
+                                    Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(ProfileActivity.this,
+                                    "Failed to send verification email.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(ProfileActivity.this,
+                                "Email already verified",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }));
+
+        if (user.isEmailVerified()){
+            verifiedBadge.setVisibility(View.VISIBLE);
+        } else {
+            verifiedCard.setVisibility(View.VISIBLE);
+        }
+
         profileEmail.setText(email);
         profilePhone.setText(phone);
         profileFullName.setText(fullName);
@@ -174,4 +199,9 @@ public class ProfileActivity extends Activity {
         finish();
     }
 
+    @Override
+    public void onBackPressed() {
+        user.reload();
+        super.onBackPressed();
+    }
 }

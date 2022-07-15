@@ -65,6 +65,7 @@
                     android:justificationMode="inter_word"
                     android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp"
+                    android:autoLink="web"
                     app:fontFamily="@font/poppinsregular" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

@@ -47,7 +47,6 @@ public class BasicProgrammingAdapter extends RecyclerView.Adapter<BasicProgrammi
             Intent i = new Intent(context, BasicProgramingPlayer.class);
             i.putExtras(b);
             v.getContext().startActivity(i);
-
         });
     }
 
