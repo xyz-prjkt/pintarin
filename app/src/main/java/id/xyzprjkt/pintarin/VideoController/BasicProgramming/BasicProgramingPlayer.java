@@ -70,15 +70,15 @@ public class BasicProgramingPlayer extends Activity {
         desc.setText(v.getDescription());
         author.setText(v.getAuthor());
 
-        if(v.getAuthor().equals("Kiara Zara") || v.getAuthor().equals("Rosydan Amru") || v.getAuthor().equals("xyzuan") || v.getAuthor().equals("Ahya Nika Salsabila")) {
+        if(v.getAuthor().equals("Kiara Azzahra") || v.getAuthor().equals("Rosydan Amru") || v.getAuthor().equals("xyzuan") || v.getAuthor().equals("Ahya Nika Salsabila")) {
             authorContainer.setVisibility(View.VISIBLE);
-            if (v.getAuthor().equals("Kiara Zara") || v.getAuthor().equals("Rosydan Amru") || v.getAuthor().equals("Ahya Nika Salsabila")) {
+            if (v.getAuthor().equals("Kiara Azzahra") || v.getAuthor().equals("Rosydan Amru") || v.getAuthor().equals("Ahya Nika Salsabila")) {
                 authorMajor.setText("Speaker");
             } else if (v.getAuthor().equals("xyzuan")){
                 authorMajor.setText("xyzscape Developer");
             }
             switch (v.getAuthor()) {
-                case "Kiara Zara":
+                case "Kiara Azzahra":
                     authorPic.setImageResource(R.drawable.about_zara);
                     break;
                 case "Rosydan Amru":

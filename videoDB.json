@@ -4,7 +4,7 @@
       "programingVideos": [
         {
           "title": "Apa itu informatika?",
-          "author": "Kiara Zara",
+          "author": "Kiara Azzahra",
           "description": "Kalau kalian tertarik dengan bidang IT tapi masih bingung dengan jurusan yang akan kalian pilih, yuk simak video ini. kami akan menjelaskan kepada kalian tentang jurusan informatika yang akan membantu kalian untuk mengembangkan bakat dan minat kalian! simak dengan baik ya supaya tidak sampai salah jurusan!",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/programing/1_Introducing_IT.mp4"
@@ -13,7 +13,7 @@
         },
         {
           "title": "Sistem Operasi",
-          "author": "Kiara Zara",
+          "author": "Kiara Azzahra",
           "description": "Sistem operasi adalah perangkat lunak sistem yang mengatur sumber daya dari perangkat keras dan perangkat lunak, serta sebagai daemon untuk program komputer. Tanpa sistem operasi, pengguna tidak dapat menjalankan program aplikasi pada komputer mereka, kecuali program booting",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/programing/3_Operating%20System.mp4"
@@ -22,7 +22,7 @@
         },
         {
           "title": "Who's The Father of C?",
-          "author": "Kiara Zara",
+          "author": "Kiara Azzahra",
           "description": "Bahasa C merupakan bahasa pemrograman tertua yang telah dikembangkan ke bahasa pemrograman lainnya seperti C++, C#, dan Java. Selain itu, konsep yang digunakan juga masih tergolong mudah, sehingga saat ingin menggunakan bahasa pemrograman lainnya, kalian sudah tahu konsep dasar dari mengkoding itu bagaimana. Namun, kalian tahu tidak? Siapakah penemu bahasa C??? yuk kita simak video berikut.",
           "sources": [
             "https://gitlab.com/ixyzuan/pintarin_db/-/raw/main/programing/4_Father%20Of%20C.mp4"

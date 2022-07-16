@@ -70,15 +70,15 @@ public class SponsoredPlayer extends Activity {
         desc.setText(v.getDescription());
         author.setText(v.getAuthor());
 
-        if(v.getAuthor().equals("Kiara Zara") || v.getAuthor().equals("Rosydan Amru") || v.getAuthor().equals("xyzuan")) {
+        if(v.getAuthor().equals("Kiara Azzahra") || v.getAuthor().equals("Rosydan Amru") || v.getAuthor().equals("xyzuan")) {
             authorContainer.setVisibility(View.VISIBLE);
-            if (v.getAuthor().equals("Kiara Zara") || v.getAuthor().equals("Rosydan Amru")) {
+            if (v.getAuthor().equals("Kiara Azzahra") || v.getAuthor().equals("Rosydan Amru")) {
                 authorMajor.setText("Speaker");
             } else if (v.getAuthor().equals("xyzuan")){
                 authorMajor.setText("xyzscape Developer");
             }
             switch (v.getAuthor()) {
-                case "Kiara Zara":
+                case "Kiara Azzahra":
                     authorPic.setImageResource(R.drawable.about_zara);
                     break;
                 case "Rosydan Amru":
