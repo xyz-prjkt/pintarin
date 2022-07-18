@@ -1,5 +1,7 @@
 ![banner](https://github.com/xyz-prjkt/pintarin/raw/master/preview/readmeBanner.png)
 # pintarin | Online Learning Platform
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/0c6782c56f0a40779c4814b249a82157)](https://www.codacy.com/gh/xyz-prjkt/pintarin/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=xyz-prjkt/pintarin&amp;utm_campaign=Badge_Grade)
+
 pintarin is an online learning platform especially for beginners in programming
 
 ### App Preview
