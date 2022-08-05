@@ -20,5 +20,5 @@ This project uses some third-party assets with a license that requires attributi
 - [Poppins Font](https://fonts.google.com/specimen/Poppins) : by Indian Type Foundry (Poppins at Google Fonts)
 - [SkeletonLayout](https://github.com/Faltenreich/SkeletonLayout) : by Philipp Fahlteich
 
-### Copyright and license
+### Copyright and licenses
 * Code and documentation Copyright 2022 a xyzprjkt. Code released under the [MIT license](https://opensource.org/licenses/MIT).
