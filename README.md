@@ -4,11 +4,6 @@
 
 pintarin is an online learning platform especially for beginners in programming
 
-### Course Material
-[Gitlab](https://gitlab.com/ixyzuan/pintarin_db)
-
-[Youtube](https://youtube.com/playlist?list=PLQaDISq7nKM5z8nsxFz7eS68v-IJs6iwe)
-
 ### App Preview
 <img src="https://github.com/xyz-prjkt/pintarin/raw/master/preview/preview1.png"/>
 <img src="https://github.com/xyz-prjkt/pintarin/raw/master/preview/preview2.png"/>
